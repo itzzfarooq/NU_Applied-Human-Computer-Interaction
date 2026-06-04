@@ -491,3 +491,18 @@
 
 **Q:** What is the difference between subjective and objective evaluation?
 **A:** Subjective: based on user opinions and feelings. Objective: based on measurable performance data like time, errors, and task completion.
+
+**Q:** What are the 4 components of GOMS?
+**A:** 1) Goals (what the user wants to achieve), 2) Operators (primitive physical/mental actions like keystrokes and clicks), 3) Methods (sequences of operators that accomplish a goal), 4) Selection rules (choose between alternative methods when multiple exist).
+
+**Q:** What are the KLM operators? (list with symbols)
+**A:** K (Keystroke, ~0.2s), P (Pointing, ~1.1s), Mh (Mental hesitation, ~1.35s), H (Home hand to device, ~0.4s), D (Draw on screen, varies), Rc (System response wait, varies), Wb (Write by hand, ~1.5s/char), Bb (Browse/scroll button, ~0.2s).
+
+**Q:** What are Nielsen's severity ratings (0-4)?
+**A:** 0 = Not a usability problem, 1 = Cosmetic (fix only if extra time), 2 = Minor (low priority), 3 = Major (high priority, important to fix), 4 = Catastrophe (must fix before release).
+
+**Q:** What are the 8 factors for choosing an evaluation method?
+**A:** 1) Stage in cycle (design vs implementation), 2) Style (lab vs field), 3) Objectivity (subjective vs objective), 4) Measures (quantitative vs qualitative), 5) Information level (low vs high), 6) Immediacy (during vs post-hoc), 7) Intrusiveness (obtrusive vs unobtrusive), 8) Resources (time, money, equipment, participants).
+
+**Q:** What are the 4 questions in a cognitive walkthrough?
+**A:** 1) Is the effect of the action the same as the user's goal at that point? 2) Will users see that the action is available? 3) Once users have found the correct action, will they know it is the one they need? 4) After the action is taken, will users understand the feedback?

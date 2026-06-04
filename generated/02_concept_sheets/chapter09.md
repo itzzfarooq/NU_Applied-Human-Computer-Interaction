@@ -21,12 +21,65 @@
 | Term | Definition |
 |------|------------|
 | **Heuristic evaluation** | Experts review an interface against a set of usability heuristics, rating severity of problems found. |
-| **Cognitive walkthrough** | Evaluators step through tasks from the user's perspective, asking: (1) Will the user know what to do? (2) Will they find the control? (3) Will they interpret feedback correctly? (4) Will they see progress toward the goal? |
+| **Cognitive walkthrough** | Evaluators step through tasks from the user's perspective, asking four questions: (1) Will the user know what to do? (2) Will they find the control? (3) Will they interpret feedback correctly? (4) Will they see progress toward the goal? |
 | **Pluralistic walkthrough** | A method where users, designers, and stakeholders walk through a scenario, discussing usability issues. |
 | **Action analysis** | Breaking down user actions into fine-grained steps to identify potential difficulties. |
 | **GOMS analysis** | A predictive model estimating task time and difficulty based on Goals, Operators, Methods, and Selection rules. |
 | **KLM (Keystroke-Level Model)** | A GOMS variant estimating task completion time by summing time for primitive operators (K, P, H, M, R, W). |
 | **Heuristic expert** | An evaluator with expertise in usability principles who conducts heuristic evaluations. |
+
+---
+
+## GOMS Model
+
+| Component | Definition | Example |
+|-----------|-----------|---------|
+| **Goals** | What the user wants to achieve | "Send an email" |
+| **Operators** | Primitive physical/mental actions | Keystrokes, mouse clicks, pointing |
+| **Methods** | Sequences of operators that accomplish a goal | Open compose → type address → click send |
+| **Selection rules** | Choose between alternative methods when multiple exist | If attachment → use "attach then send" method |
+
+---
+
+## KLM Operators
+
+| Operator | Symbol | Description | Typical Time |
+|----------|--------|-------------|-------------|
+| **Keystroke** | K | Pressing a key or clicking a button | ~0.2–0.3s |
+| **Pointing** | P | Pointing to a target with a mouse/pointer | ~1.1s |
+| **Mental hesitation** | Mh | Mental preparation/decision before acting | ~1.35s |
+| **Home (hand to device)** | H | Moving hand from keyboard to mouse or vice versa | ~0.4s |
+| **Draw (hand to screen)** | D | Moving hand to draw on a tablet/screen | Varies |
+| **Respond (system)** | Rc | Waiting for system response | Varies |
+| **Write (handwriting)** | Wb | Writing by hand on a tablet | ~1.5s per character |
+| **Browse (button)** | Bb | Pressing a button to browse/scroll | ~0.2s |
+
+---
+
+## Nielsen's Severity Rating Scale
+
+| Rating | Meaning |
+|--------|---------|
+| **0** | Not a usability problem |
+| **1** | Cosmetic — fix only if extra time available |
+| **2** | Minor — low priority |
+| **3** | Major — high priority, important to fix |
+| **4** | Catastrophe — must fix before release |
+
+---
+
+## Choosing Evaluation Methods — 8 Factors
+
+| Factor | Options |
+|--------|---------|
+| **1. Stage in cycle** | Design stage (quick, cheap) vs. Implementation stage (comprehensive, user-based) |
+| **2. Style** | Laboratory (controlled) vs. Field (natural context) |
+| **3. Objectivity** | Subjective (evaluator expertise) vs. Objective (repeatable, not evaluator-dependent) |
+| **4. Measures** | Quantitative (numeric) vs. Qualitative (non-numeric) |
+| **5. Information level** | Low-level (specific decisions) vs. High-level (overall impression) |
+| **6. Immediacy** | Immediate (during interaction) vs. Post-hoc (after event; recall bias) |
+| **7. Intrusiveness** | Obtrusive (user aware) vs. Unobtrusive (automatic logging) |
+| **8. Resources** | Time, money, equipment, participants, evaluator expertise |
 
 ---
 

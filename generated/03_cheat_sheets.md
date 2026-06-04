@@ -369,8 +369,17 @@
 | **Review-based** | Any expert | Literature/model-based support |
 
 ### Heuristic Evaluation (Nielsen & Molich)
-- Experts check design against heuristics (predictable behaviour, consistency, feedback, etc.)
+- 3–5 independent evaluators; **5 evaluators → ~75%** of problems found
 - "Debugs" design without users
+
+**Nielsen's Severity Scale (0–4)**:
+| Rating | Meaning |
+|--------|---------|
+| 0 | Not a usability problem |
+| 1 | Cosmetic — fix if extra time |
+| 2 | Minor — low priority |
+| 3 | Major — high priority |
+| 4 | Catastrophe — must fix before release |
 
 ### User-Based Evaluation
 | Setting | Pros | Cons |
@@ -400,14 +409,39 @@
 - **Saccades**: rapid movement between points of interest
 - **Scan paths**: straight to target + short fixation = optimal
 
-### Choosing a Method — 7 Dimensions
-1. **When**: design vs implementation
+### GOMS Model
+| Component | What |
+|-----------|------|
+| **Goals** | What user wants to achieve |
+| **Operators** | Primitive physical/mental actions |
+| **Methods** | Sequences of operators that accomplish a goal |
+| **Selection rules** | Choose between alternative methods |
+
+**Use**: Predicts user performance before implementation.
+
+### KLM Operators
+| Operator | Symbol | Time |
+|----------|--------|------|
+| Keystroke | K | ~0.2–0.3s |
+| Pointing | P | ~1.1s |
+| Mental hesitation | Mh | ~1.35s |
+| Home (hand to device) | H | ~0.4s |
+| Draw | D | Varies |
+| System response | Rc | Varies |
+| Write (handwriting) | Wb | ~1.5s/char |
+| Browse button | Bb | ~0.2s |
+
+**Total time** = Σ(operator times) + mental prep
+
+### Choosing a Method — 8 Factors
+1. **Stage**: design vs implementation
 2. **Style**: lab vs field
 3. **Objectivity**: subjective vs objective
 4. **Measures**: qualitative vs quantitative
-5. **Info level**: high vs low
-6. **Interference**: obtrusive vs unobtrusive
-7. **Resources**: time, subjects, equipment, expertise
+5. **Information level**: high vs low
+6. **Immediacy**: during vs post-hoc
+7. **Intrusiveness**: obtrusive vs unobtrusive
+8. **Resources**: time, money, equipment, expertise
 
 ### Query Techniques
 - **Interviews**: one-to-one, informal, subjective, flexible

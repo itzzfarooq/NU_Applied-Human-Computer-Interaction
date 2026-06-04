@@ -20,6 +20,10 @@
 14. [QOC Model](#14-qoc-model-ch6)
 15. [Client-Server Architecture](#15-client-server-architecture-ch8)
 16. [X Windows Architecture](#16-x-windows-architecture-ch8)
+17. [GOMS Model](#17-goms-model-ch9)
+18. [Keystroke-Level Model (KLM)](#18-keystroke-level-model--klm-ch9)
+19. [Nielsen's Severity Rating Scale](#19-nielsens-severity-rating-scale-ch9)
+20. [8-Factor Evaluation Method Selection](#20-8-factor-evaluation-method-selection-ch9)
 
 ---
 
@@ -1583,6 +1587,117 @@ Window system for networked graphical user interfaces. Implements client-server 
 
 ---
 
+## 17. GOMS Model (Ch9)
+
+### Overview
+Goals, Operators, Methods, Selection — a model-based evaluation approach that **predicts user performance** with a particular interface. Used to filter design options before implementation.
+
+### Components
+
+| Component | Definition | Example |
+|-----------|-----------|---------|
+| **Goals** | What the user wants to achieve | "Send an email" |
+| **Operators** | Primitive physical/mental actions | Keystrokes, mouse clicks, pointing, mental operators |
+| **Methods** | Sequences of operators that accomplish a goal | Open compose → type address → type subject → click send |
+| **Selection rules** | Choose between alternative methods when multiple exist | If attachment → use "attach then send"; otherwise → "direct send" |
+
+### When to Use
+- **Comparing interface designs** by predicting task completion times
+- **Filtering design options** early in the process — before implementation
+- For **repetitive, well-defined tasks** where operator sequences are clear
+
+### Exam Tips
+- **Key insight**: GOMS provides quantitative predictions without user testing
+- **Application**: Use to compare Design A vs Design B by calculating predicted execution times
+
+---
+
+## 18. Keystroke-Level Model — KLM (Ch9)
+
+### Overview
+Lower-level variant of GOMS that provides **quantitative time predictions** for low-level physical tasks. Breaks interaction into primitive operators with measured durations.
+
+### Operator Table
+
+| Operator | Symbol | Description | Typical Time |
+|----------|--------|-------------|-------------|
+| **Keystroke** | K | Pressing a key or clicking a button | ~0.2–0.3s |
+| **Pointing** | P | Pointing to a target with mouse/pointer | ~1.1s |
+| **Mental preparation** | Mh | Mental hesitation before acting | ~1.35s |
+| **Home (hand to device)** | H | Moving hand between keyboard and mouse | ~0.4s |
+| **Draw (hand to screen)** | D | Moving hand to draw on tablet/screen | Varies |
+| **System response** | Rc | Waiting for system response | Varies |
+| **Write (handwriting)** | Wb | Writing by hand on tablet | ~1.5s/char |
+| **Browse button** | Bb | Pressing button to browse/scroll | ~0.2s |
+
+**Total time** = Σ(time for each operator) + mental operators for preparation
+
+### When to Use
+- **Comparing interface designs** by calculating predicted task times before implementation
+- For **low-level physical tasks** (keystrokes, mouse movements)
+- When you need **quantitative predictions** without user testing
+
+### Limitations
+- Best for low-level physical tasks; doesn't capture higher-level cognitive processes
+- Doesn't model learning effects or error recovery well
+
+---
+
+## 19. Nielsen's Severity Rating Scale (Ch9)
+
+### Overview
+0–4 scale for rating usability problem severity during heuristic evaluation. Helps **prioritize fixes** and communicate urgency to stakeholders.
+
+### The Scale
+
+| Rating | Label | Description | Action |
+|--------|-------|-------------|--------|
+| **0** | Not a usability problem | Not an issue | Ignore |
+| **1** | Cosmetic | Fix only if extra time available | Low priority |
+| **2** | Minor | Low priority, minor inconvenience | Fix when possible |
+| **3** | Major | High priority, important to fix | Fix before release |
+| **4** | Catastrophe | Usability emergency, blocks users | Must fix before release |
+
+### When to Use
+- During **heuristic evaluation** to rate each discovered violation
+- To **prioritize** which problems to fix first
+- For **communicating** problem severity to development teams and stakeholders
+
+### Exam Tips
+- **Key insight**: 3–5 evaluators find ~75% of usability problems; each rates severity independently
+- **Application**: Use with heuristic evaluation — rate every violation on this scale
+
+---
+
+## 20. 8-Factor Evaluation Method Selection (Ch9)
+
+### Overview
+Eight dimensions for choosing the right evaluation method based on your stage, needs, and resources. No single "best" method — the right choice depends on context.
+
+### The 8 Factors
+
+| Factor | Options / Considerations |
+|--------|------------------------|
+| **1. Stage in cycle** | Design stage (quick, cheap, analytic) vs. Implementation stage (comprehensive, user-based) |
+| **2. Style** | Laboratory (controlled, specialist equipment) vs. Field (natural context, real behavior) |
+| **3. Objectivity** | Subjective (evaluator-dependent — walkthrough, think aloud) vs. Objective (repeatable — experiments) |
+| **4. Measures** | Quantitative (numeric, statistical) vs. Qualitative (non-numeric, detailed) |
+| **5. Information level** | Low-level (specific decisions — "which font?") vs. High-level (overall — "is it usable?") |
+| **6. Immediacy** | Immediate (during interaction — think aloud) vs. Post-hoc (after event — walkthrough) |
+| **7. Intrusiveness** | Obtrusive (user aware, alters behavior) vs. Unobtrusive (automatic logging) |
+| **8. Resources** | Time, money, equipment, participants, expertise, context access |
+
+### When to Use
+- When **deciding which evaluation method** to apply at a given project stage
+- To **match methods** to available resources, expertise, and evaluation goals
+- For **justifying method choice** in reports and exam answers
+
+### Exam Tips
+- **Key insight**: Different methods serve different purposes — expert analysis for early designs, user testing for implementations
+- **Application**: Use these 8 factors to systematically justify your method selection
+
+---
+
 ## Comparative Summary
 
 ### Models Comparison Table
@@ -1605,6 +1720,10 @@ Window system for networked graphical user interfaces. Implements client-server 
 | **QOC** | Rationale | Questions, options | Design evaluation |
 | **Client-Server** | Distributed | Clients, server | Networked systems |
 | **X Windows** | Window | Client-server, protocol | Window management |
+| **GOMS** | Performance | Goals, operators, methods, selection | Predicting task times |
+| **KLM** | Performance | Operator time table | Comparing physical tasks |
+| **Severity Scale** | Evaluation | 0–4 severity rating | Prioritizing usability fixes |
+| **8-Factor Selection** | Methodology | 8 evaluation dimensions | Choosing evaluation method |
 
 ### Architecture Comparison
 
@@ -1632,6 +1751,10 @@ Window system for networked graphical user interfaces. Implements client-server 
 8. **IBIS vs. QOC**: Compare design rationale models
 9. **Client-Server**: Explain the role of abstract terminals
 10. **X Windows**: Describe the X Protocol
+11. **GOMS**: Define Goals, Operators, Methods, Selection rules
+12. **KLM**: Calculate predicted task time using operator table
+13. **Severity Scale**: Rate usability problem severity (0–4)
+14. **8-Factor Selection**: Justify evaluation method choice using 8 dimensions
 
 ### Key Relationships
 
@@ -1660,4 +1783,4 @@ Scripts                    MVC
 ---
 
 *Generated for NU Applied Human-Computer Interaction Course*
-*Covers Chapters 1-9: Models and Architectures*
+*Covers Chapters 1-9: 20 Models and Frameworks*

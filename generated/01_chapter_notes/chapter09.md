@@ -1,297 +1,397 @@
-# Chapter 9: Evaluation Techniques — How to Tell If Your Design Works
+# Chapter 9: Evaluation Techniques
 
 ## The Big Picture
 
-You've designed and built an interface (Chapters 5-8) following principles (Chapter 7). Now: **does it actually work?** Evaluation is the process of answering that question.
+You've designed an interface (Chapters 5–8) following principles (Chapter 7). Now: **does it actually work?** Evaluation answers that question — not as a final phase, but **continuously** throughout the lifecycle. Fixing problems early is far cheaper than fixing them late.
 
-Evaluation happens **throughout** the design lifecycle — not just at the end. There are two broad approaches:
-1. **Expert evaluation** — specialists inspect the design
-2. **User evaluation** — real people use the system
+Two broad approaches:
+1. **Expert analysis** — specialists inspect the design (cheap, works on specs/prototypes, but no actual use observed)
+2. **User participation** — real people use the system (requires working prototype, but assesses real use)
 
-Each has strengths and weaknesses. Choosing the right method depends on where you are in the process, what you need to learn, and what resources you have.
-
----
-
-## 1. WHAT IS EVALUATION?
-
-### Goals
-
-1. **Assess functionality** — does the system do what users need?
-2. **Assess effect on user** — is it usable, learnable, satisfying?
-3. **Identify specific problems** — what's broken or confusing?
-
-### Where Evaluation Happens
-
-- **Laboratory** — controlled, specialist equipment
-- **Field** — real context, natural behavior
-- **In collaboration with users** — participatory
+Neither replaces the other.
 
 ---
 
-## 2. EXPERT EVALUATION — No Users Needed
+## 1. What Is Evaluation?
 
-Three methods where evaluators (not users) inspect the design:
+Evaluation has three main goals:
 
-### Cognitive Walkthrough
+| Goal | What It Means |
+|------|---------------|
+| **Assess functionality** | Does the system do what users need? Is functionality clearly reachable? Does it match user expectations of the task? |
+| **Assess user experience** | Is it learnable? Usable? Satisfying? Does it overload the user? |
+| **Identify specific problems** | What causes confusion, unexpected results, or errors? These trouble-spots can then be rectified. |
 
-**Who**: Expert in cognitive psychology
-**How**: Walks through each task step, analyzing what cognitive processes are required and what learning problems may occur.
-**Focus**: Does the design support users in **learning** the task?
-
-For each step, the expert asks:
-- What impact will this interaction have on the user?
-- What cognitive processes are required?
-- What learning problems might occur?
-
-### Heuristic Evaluation
-
-**Who**: Usability experts
-**How**: Evaluators check the interface against a set of **usability heuristics** (rules of thumb). Each violation is a potential problem.
-**Example heuristics**: system behaviour is predictable, consistent, provides feedback.
-
-Think of it as **debugging the design**.
-
-### Review-Based Evaluation
-
-**How**: Use results from the published HCI literature to support or refute design decisions.
-**Caution**: Ensure results from prior studies actually transfer to your design context.
-**Related**: **Model-based evaluation** (e.g., GOMS) — use cognitive models to predict performance and filter design options.
+Evaluation can happen in a **laboratory** (controlled, specialist equipment), in the **field** (real context, natural behavior), or **collaboratively with users** (participatory).
 
 ---
 
-## 3. USER EVALUATION — Getting Real Feedback
+## 2. Expert Evaluation — Inspecting Without Users
 
-### Laboratory Studies
+Cheap, flexible, works at **any stage** (specs to full systems). Does **not assess actual use**.
 
-| Pros | Cons |
-|------|------|
-| Specialist equipment available | Lack of context |
-| Uninterrupted environment | Hard to observe multiple users cooperating |
+### 2.1 Cognitive Walkthrough
 
-**Best for**: Dangerous or impractical field settings, constrained single-user systems, controlled manipulation of use.
+Adapted from software engineering code walkthroughs. Focus: **learning through exploration**.
 
-### Field Studies
+**What you need**: (1) specification/prototype, (2) representative task, (3) complete action list, (4) user profile
 
-| Pros | Cons |
-|------|------|
-| Natural environment | Distractions |
-| Context retained | Noise |
-| Longitudinal studies possible | Observation may alter behavior |
+**Four questions** — for each action in the task sequence:
 
-**Best for**: When context is crucial, longitudinal studies.
+| # | Question | What It Checks |
+|---|----------|---------------|
+| 1 | Is the effect of the action the same as the user's goal? | Goal-action match |
+| 2 | Will users see that the action is available? | Visibility (not recognition) |
+| 3 | Will users know it's the correct action? | Meaning is clear |
+| 4 | Will users understand the feedback? | Completion confirmation |
+
+Any negative answer → **usability problem report** (system version, date, evaluator, description, severity).
+
+### 2.2 Heuristic Evaluation
+
+By **Nielsen & Molich**. A heuristic = guideline or rule of thumb. **3–5 independent evaluators** critique the system against heuristics. Five evaluators find ~**75%** of problems.
+
+**Nielsen's Severity Rating Scale (0–4)**:
+- **0** = Not a usability problem
+- **1** = Cosmetic — fix only if extra time available
+- **2** = Minor — low priority
+- **3** = Major — high priority, important to fix
+- **4** = Catastrophe — must fix before release
+
+**Nielsen's Ten Usability Heuristics**:
+
+| # | Heuristic | Key Idea |
+|---|-----------|----------|
+| 1 | **Visibility of system status** | Keep users informed through feedback within reasonable time |
+| 2 | **Match between system and real world** | Use user's language, follow real-world conventions, natural/logical order |
+| 3 | **User control and freedom** | Provide "emergency exit," support undo/redo |
+| 4 | **Consistency and standards** | Don't make users wonder if different words/situations mean the same thing |
+| 5 | **Error prevention** | Prevent problems before they occur (better than good error messages) |
+| 6 | **Recognition rather than recall** | Make objects/actions/options visible; minimize memory load |
+| 7 | **Flexibility and efficiency of use** | Accelerators for experts; cater to inexperienced and experienced users |
+| 8 | **Aesthetic and minimalist design** | No irrelevant information; every extra unit competes with relevant units |
+| 9 | **Help users recognize, diagnose, and recover from errors** | Plain language, precise problem indication, constructive suggestions |
+| 10 | **Help and documentation** | Searchable, task-focused, concrete steps, not too large |
+
+**Key characteristic**: Discount usability technique — cheap, flexible, any stage. Evaluations must be **independent**. Domain-specific heuristics can supplement (e.g., "awareness of other users" for groupware).
+
+### 2.3 Model-Based Evaluation
+
+- **GOMS** (Goals, Operators, Methods, Selection) — predicts user performance; filters design options (Section 8 below)
+- **KLM** — lower-level, predicts task execution time (Section 8 below)
+- **Dialog models** — state transition networks evaluate dialog sequences for unreachable states, circular dialogs, complexity
+- **Design rationale** (Ch. 6) — evaluate options against criteria with supporting evidence
+
+### 2.4 Using Previous Studies
+
+Literature reviews can support/refute design decisions without repeating experiments. **Caution**: must verify transferability — experimental design, participant population, and assumptions may not apply to your context.
 
 ---
 
-## 4. EVALUATING IMPLEMENTATIONS
+## 3. User-Based Evaluation
 
-Requires an **artefact** to test: simulation, prototype, or full implementation. Earlier in design → lighter evaluation. Later → more rigorous.
+Expert techniques are **not a replacement** for usability testing with actual users. User-based methods include experimental, observational, query, and physiological techniques.
 
----
+### 3.1 Laboratory vs. Field Studies
 
-## 5. EXPERIMENTAL EVALUATION — The Scientific Approach
+| Dimension | Laboratory | Field |
+|-----------|-----------|-------|
+| **Environment** | Controlled, specialist equipment | Real work environment |
+| **Pros** | Interruption-free; sophisticated recording; variable manipulation | Natural context; observe cooperation; longitudinal |
+| **Cons** | Lack of context; hard to observe cooperation | Noise; observer effect (Heisenberg principle) |
+| **Best for** | Dangerous/remote; constrained tasks; controlled comparisons | Context crucial; actual use; long-duration activities |
 
-### The Process
+### 3.2 Experimental Evaluation
 
-1. Choose a **hypothesis**
-2. Define **experimental conditions** (differ in exactly one variable)
-3. Measure **behavioral changes**
-4. Attribute changes to the different conditions
+Most powerful method for **empirical evidence**.
 
-### Key Experimental Concepts
+**Participants**: Must match expected user population. **Nielsen & Landauer**: 1 user → ~33% problems; 5 users → ~75%. For statistical experiments, at least **10 participants**.
 
-| Concept | Definition | Example |
-|---------|-----------|---------|
-| **Subjects** | Who participates — representative, sufficient sample | 20 users representative of your target audience |
-| **Independent Variable (IV)** | What you change between conditions | Interface style (menu vs. command) |
-| **Dependent Variable (DV)** | What you measure | Time to complete task, error rate |
-| **Hypothesis** | Your prediction | "Error rate increases as font size decreases" |
-| **Null hypothesis** | No difference between conditions (aim to disprove) | "Font size has no effect on error rate" |
+**Variables**: **IV** (manipulated) vs **DV** (measured). Each IV value = a **level**.
 
-### Experimental Designs
+**Hypotheses**: Prediction in terms of IV/DV. Aim: **disprove the null hypothesis** (no difference).
+
+**Experimental Designs**:
 
 | Design | How It Works | Pros | Cons |
 |--------|-------------|------|------|
-| **Within Groups** | Each subject experiences all conditions | Less costly, less user variation | Transfer of learning possible |
-| **Between Groups** | Each subject experiences one condition | No transfer of learning | More users needed, variation can bias |
+| **Between-subjects** | Each participant → one condition | No learning transfer; cleaner | More participants; individual variation |
+| **Within-subjects** | Each participant → all conditions | Fewer users; less variation | Transfer possible (mitigate via counterbalancing) |
+| **Mixed** | One variable between, one within | Compromise | Complex analysis |
+
+**Key concepts**: **Control condition** (identical except manipulation); **Counterbalancing** (vary order to reduce transfer); **Transfer effect** (practice from condition 1 affects condition 2).
+
+### 3.3 Statistical Analysis
+
+**Two rules**: (1) **Look** at your data (visualize — spot outliers), (2) **Save** your data (never discard originals).
+
+**Data types**: Discrete (finite values), continuous (any value in range), positive continuous (no negatives — e.g., response time).
+
+**Statistical test selection**:
+
+| Test Type | Assumption | When to Use | Trade-off |
+|-----------|-----------|-------------|-----------|
+| **Parametric** | Normal distribution | Robust, powerful | Fragile if assumption violated |
+| **Non-parametric** | No distribution assumption (rank-based) | Non-normal or ordinal data | Less powerful |
+| **Contingency table** | Discrete attributes, count combinations | Categorical data (chi-squared) | Limited to categorical |
+
+**When is data normal?** If it's the sum/average of many small independent effects, likely normal. Subjective ratings are typically **not** normal.
+
+**Common tests** (Table 9.1):
+- Two-valued IV + Normal DV → **Student's t test**
+- Discrete IV + Normal DV → **ANOVA**
+- Continuous IV + Normal DV → **Regression**
+- Non-parametric equivalents: **Wilcoxon rank-sum**, **Spearman's correlation**
+
+**Three questions about data**:
+1. **Is there a difference?** (hypothesis testing)
+2. **How big?** (point estimation)
+3. **How accurate?** (confidence intervals)
+
+**Within-subjects analysis**: Subtract each participant's overall mean from condition scores to remove inter-participant differences, then analyze residuals.
+
+### 3.4 Evaluating Group Systems
+
+Harder than single-user: more participants (3 people × 10 experiments = 30 participants), longer sessions, scheduling, enormous data, extreme group variation.
+
+**Solutions**: within-group experiments; **micro-analysis** of gaps between utterances; **anecdotal/qualitative analysis** (critical incidents); **ethnography** (detailed contextual recording, observer outside the situation).
 
 ---
 
-## 6. ANALYSIS OF DATA
+## 4. Observational Techniques — Watching Users Work
 
-### Before Statistics
+Users are observed completing tasks. Simple observation rarely suffices — users are asked to **think aloud**.
 
-- **Look at your data** — visualize it
-- **Save original data** — never work on the only copy
+### 4.1 Think Aloud
 
-### Choosing a Statistical Test
+User **talks through what they're doing** while being observed.
 
-Depends on:
-1. **Type of data**: Discrete (finite values) vs. Continuous (any value)
-2. **Information required**: Is there a difference? How big? How accurate?
+| Pros | Cons |
+|------|------|
+| Simple; little expertise needed | Subjective and selective |
+| Useful insight into problems | Describing changes performance ("centipede effect") |
+| Works throughout design process | |
 
-### Types of Tests
+### 4.2 Cooperative Evaluation (Nielsen)
 
-| Test Type | Assumption | Pros | Cons |
-|-----------|-----------|------|------|
-| **Parametric** | Normal distribution | Robust, powerful | Assumption may not hold |
-| **Non-parametric** | No distribution assumption | More reliable | Less powerful |
-| **Contingency table** | Classify by discrete attributes | Simple count data | Limited to categorical |
+User sees themselves as **collaborator**. Evaluator can ask **"why?"** and **"what-if?"**; user can ask for clarification. Less constrained than standard think aloud; user is **encouraged to criticize the system**.
 
----
-
-## 7. GROUP STUDIES — Evaluating Collaboration
-
-More difficult than single-user experiments.
-
-### Challenges
-
-- **Subject groups**: larger numbers, more expensive, harder to timetable, more variation
-- **Tasks**: must encourage cooperation — creative tasks, decision games, control tasks
-- **Data gathering**: multiple video cameras + logging; sync is hard, volume is huge
-- **Analysis**: vast variation between groups
-
-### Solutions
-
-- Within-groups experiments
-- **Micro-analysis** (e.g., gaps in speech)
-- Anecdotal and qualitative analysis
-- Look at interactions between group and medium
-
----
-
-## 8. FIELD STUDIES — Real-World Context
-
-- Experiments are dominated by group formation
-- Field studies are more realistic
-- **Distributed cognition** — study work in context
-- Real action is **situated action** — physical and social environment both crucial
-
-**Contrast**: Psychology → controlled experiments. Sociology/anthropology → open studies with rich data.
-
----
-
-## 9. OBSERVATIONAL METHODS — Watching Users Work
-
-### Five Methods
-
-| Method | How It Works | Best For |
-|--------|-------------|----------|
-| **Think Aloud** | User describes thoughts while performing task | Simple, insightful |
-| **Cooperative Evaluation** | User + evaluator collaborate, both ask questions | Less constrained, user criticizes system |
-| **Protocol Analysis** | Record via paper/audio/video/logging/notebooks | Mixed approach in practice |
-| **EVA (Automated)** | Post-task walkthrough, user reacts after event | Focused analysis, less interruption |
-| **Post-task Walkthrough** | Transcript played back to user for comment | Immediate (fresh) or delayed (prepared questions) |
-
-### Think Aloud — The Classic
-
-**Pros**: Simple, requires little expertise, useful insight, shows actual use.
-**Cons**: Subjective, selective, describing may alter task performance.
-
-### Protocol Analysis — Recording Methods
+### 4.3 Protocol Analysis — Recording Methods
 
 | Method | Pros | Cons |
 |--------|------|------|
-| Paper & pencil | Cheap | Limited to writing speed |
-| Audio | Good for think aloud | Hard to sync with other data |
-| Video | Accurate, realistic | Special equipment, obtrusive |
-| Computer logging | Automatic, unobtrusive | Large data volume |
-| User notebooks | Good for longitudinal | Coarse, subjective |
+| **Paper/pencil** | Cheap; captures extraneous events | Limited by writing speed |
+| **Audio** | Good for think aloud | Hard to identify exact actions |
+| **Video** | See what participant does | Camera positioning; obtrusive |
+| **Computer logging** | Automatic, unobtrusive; excellent for **longitudinal** | Huge data volume; "semantics free" (no why) |
+| **User notebooks** | Good for longitudinal; captures unusual tasks | Coarse; interpreted records |
 
-In practice, methods are **mixed**.
+Methods are **mixed** in practice. Transcription loses nuances; coding schemes help but are hard to apply consistently.
+
+### 4.4 Automatic Protocol Analysis Tools
+
+**EVA** (Experimental Video Annotator): multimedia workstation linked to video recorder. Evaluator tags events during recording (timestamps, snapshots, errors). Tagged segments reviewed after session. **Drawback**: tagging can distract from observing.
+
+Other: **Workplace project** (Xerox PARC) for synchronized multi-stream analysis; **DRUM** (MUSiC toolkit) for usability metrics.
+
+### 4.5 Post-Task Walkthroughs
+
+Replays transcript to participant for comment. **Immediate**: participant remembers why. **Delayed**: analyst frames focused questions but loses freshness. **Essential** when participant cannot talk during task (critical/intensive tasks).
 
 ---
 
-## 10. QUERY TECHNIQUES — Asking Users Directly
+## 5. Query Techniques — Asking Users Directly
 
-### Interviews
+Gets the **user's viewpoint directly**. Relatively simple and cheap, but information is **subjective** and may be a "rationalized" account.
+
+### 5.1 Interviews
 
 | Pros | Cons |
 |------|------|
-| Can be varied to context | Very subjective |
-| Issues explored fully | Time consuming |
+| Flexible; probe deeply | Subjective; time-consuming |
 | Elicits unanticipated problems | |
+| High-level evaluation (preferences, attitudes) | |
 
-### Questionnaires
+**Approach**: Top-down — general questions → leading ("why?", "what if?"). Plan in advance but adapt. Best **with observation** to clarify events.
+
+### 5.2 Questionnaires
 
 | Pros | Cons |
 |------|------|
-| Quick, reaches large groups | Less flexible |
-| Can be analyzed rigorously | Less probing |
+| Quick; large groups; rigorous | Fixed questions; less probing |
+| Multiple design stages | Low return rate (~25–30%) |
 
-**Styles of questions**:
-- **General** — broad, open
-- **Open-ended** — free-form responses
-- **Scalar** — Likert scale ratings
-- **Multi-choice** — select from options
-- **Ranked** — order by preference
+**Five question styles**:
 
-**Key**: Design the questionnaire carefully. Know what information you need and how you'll analyze it beforehand.
+| Style | Description | Example |
+|-------|-------------|---------|
+| **General** | User background | Demographics |
+| **Open-ended** | Unprompted opinion | "Any improvements?" |
+| **Scalar (Likert)** | Numeric scale rating | "Easy to recover from mistakes" — Disagree 1 2 3 4 5 Agree |
+| **Multi-choice** | Select from responses | "How do you get help?" |
+| **Ranked** | Order by preference | "Rank these methods" (1 = most useful) |
 
----
+**Scalar scales**: 1–5 or 1–7 most effective. Odd scales = neutral option; even scales force choice. Prefer **closed questions** to reduce burden. Always **pilot study** (4–5 users) before distribution.
 
-## 11. PHYSIOLOGICAL METHODS — Measuring the Body
-
-### Eye Tracking
-
-Measures:
-- **Fixations** — eye pauses (number/duration = difficulty level)
-- **Saccades** — rapid eye movements between fixations
-- **Scan paths** — overall movement pattern (straight to target + short fixation = optimal)
-
-### Physiological Measurements
-
-| Measure | What It Tracks |
-|---------|---------------|
-| **Heart activity** | Blood pressure, volume, pulse |
-| **Galvanic Skin Response (GSR)** | Sweat gland activity |
-| **Electromyogram (EMG)** | Muscle electrical activity |
-| **Electroencephalogram (EEG)** | Brain electrical activity |
-
-**Limitation**: Interpreting these responses is difficult — more research needed.
+**Specific validated questionnaires**: **QUIS** (User Interface Satisfaction), **SUS** (System Usability Scale), **NASA-TLX** (Task Load Index — cognitive workload).
 
 ---
 
-## 12. CHOOSING AN EVALUATION METHOD — Seven Dimensions
+## 6. Physiological Measures — Measuring the Body
 
-| Dimension | Options |
-|-----------|---------|
-| **When in process** | Design vs. Implementation |
-| **Style** | Laboratory vs. Field |
-| **Objectivity** | Subjective vs. Objective |
-| **Measures** | Qualitative vs. Quantitative |
-| **Information level** | High level vs. Low level |
-| **Interference** | Obtrusive vs. Unobtrusive |
-| **Resources** | Time, subjects, equipment, expertise |
+Objective usability testing — measuring what users do and how they feel directly.
 
-**There is no single "best" method.** The right choice depends on where you are, what you need to learn, and what you can afford.
+### 6.1 Eye Tracking
+
+Eye movements reflect **cognitive processing**. Modern systems are non-invasive.
+
+| Measurement | What It Indicates |
+|-------------|-------------------|
+| **Number of fixations** | More = less efficient search |
+| **Fixation duration** | Longer = difficulty |
+| **Saccades** | Rapid movements between fixations |
+| **Scan path** | Overall pattern — cognitive load; optimal = straight to target |
+
+**Status**: Promising but expensive; more research needed for interpretation.
+
+### 6.2 Other Physiological Measurements
+
+| Measure | Tracks | Associated With |
+|---------|--------|-----------------|
+| **Heart activity** | Blood pressure, pulse | Stress |
+| **GSR** | Sweat gland activity | Arousal, mental effort |
+| **EMG** | Muscle electrical activity | Task involvement |
+| **EEG** | Brain electrical activity | Decision making, attention |
+
+**Key limitation**: Unclear relationship between physiological changes and specific interaction events. Increased pulse could mean frustration OR task stress. Mapping physiological patterns to emotional states remains an **active research question**.
 
 ---
 
-## KEY CONCEPTS FOR EXAM
+## 7. Choosing an Evaluation Method — Eight Dimensions
 
-1. **Evaluation goals**: assess functionality, effect on user, identify problems
-2. **Cognitive walkthrough**: expert analyzes learning support per task step
-3. **Heuristic evaluation**: experts check for heuristic violations (Nielsen & Molich)
-4. **Review-based evaluation**: literature supports/refutes design; GOMS prediction
-5. **Lab studies**: controlled, specialist equipment, lacks context
-6. **Field studies**: natural environment, context retained, longitudinal possible
-7. **Experimental evaluation**: hypothesis, IV/DV, controlled conditions
-8. **IV** (changed between conditions) vs **DV** (measured)
-9. **Null hypothesis**: no difference — aim to disprove
-10. **Within groups**: each subject does all conditions (transfer possible, less costly)
-11. **Between groups**: each subject does one condition (no transfer, more users)
-12. **Parametric**: normal distribution assumed (powerful but fragile)
-13. **Non-parametric**: no distribution assumption (reliable but less powerful)
-14. **Group studies**: harder than single-user — subjects, tasks, data, analysis problems
-15. **Distributed cognition**: work studied in context
-16. **Situated action**: real action, physical + social environment crucial
-17. **Think aloud**: user describes thoughts — simple but subjective
-18. **Cooperative evaluation**: user + evaluator collaborate
-19. **Protocol analysis**: paper/audio/video/logging/notebooks
-20. **EVA**: post-task walkthrough, less interruption
-21. **Post-task walkthroughs**: transcript playback — immediate or delayed
-22. **Interviews**: one-to-one, flexible, subjective, time-consuming
-23. **Questionnaires**: quick, large groups, rigorous — 5 question styles
-24. **Eye tracking**: fixations (difficulty), saccades (movement), scan paths
-25. **Physiological**: GSR, EMG, EEG, heart — hard to interpret
-26. **Choosing method**: 7 dimensions — match to your stage, needs, and resources
+No single "best" method. Eight factors distinguish techniques:
+
+| Factor | Options |
+|--------|---------|
+| **1. Stage in cycle** | Design (cheap, analytic) vs. Implementation (comprehensive, user-based) |
+| **2. Style** | Laboratory (controlled) vs. Field (natural context) |
+| **3. Objectivity** | Subjective (evaluator expertise) vs. Objective (repeatable) |
+| **4. Measures** | Quantitative (statistical) vs. Qualitative (detailed but harder to analyze) |
+| **5. Information level** | Low-level (specific decisions) vs. High-level (overall impression) |
+| **6. Immediacy** | Immediate (during interaction) vs. Post-hoc (after event; recall bias) |
+| **7. Intrusiveness** | Obtrusive (alters behavior) vs. Unobtrusive (limited info) |
+| **8. Resources** | Time, money, equipment, participants, expertise |
+
+**Classification tables** (textbook Tables 9.4–9.7):
+
+**Analytic** (Table 9.4): CW, HE, Review, Model — all throughout design; HE = high-level, CW = low-level
+
+**Experimental/Query** (Table 9.5): Experiment = objective/quantitative; Interviews/Qnaire = subjective, high-level
+
+**Observational** (Table 9.6): Think Aloud, Protocol, Post-Task — all implementation stage, qualitative
+
+**Monitoring** (Table 9.7): Eye Tracking, Physiological — objective, quantitative, high equipment cost
+
+---
+
+## 8. GOMS and Performance Models
+
+**GOMS** (Goals, Operators, Methods, Selection) — model-based evaluation predicting user performance.
+
+| Component | Definition | Example |
+|-----------|-----------|---------|
+| **Goals** | What user wants to achieve | "Send an email" |
+| **Operators** | Primitive physical/mental actions | Keystrokes, mouse clicks, pointing |
+| **Methods** | Sequences of operators for a goal | Open compose → type address → click send |
+| **Selection rules** | Choose between alternative methods | If attachment → use "attach then send" |
+
+### Keystroke-Level Model (KLM)
+
+Lower-level GOMS variant predicting task execution time:
+
+| Operator | Symbol | Typical Time |
+|----------|--------|-------------|
+| **Keystroke** | K | ~0.2–0.3s |
+| **Pointing** | P | ~1.1s |
+| **Mental hesitation** | Mh | ~1.35s |
+| **Home (hand to device)** | H | ~0.4s |
+| **Draw** | D | Varies |
+| **System response** | Rc | Varies |
+| **Write (handwriting)** | Wb | ~1.5s/char |
+| **Browse button** | Bb | ~0.2s |
+
+**Total time** = Σ(operator times) + mental operators. Allows **pre-implementation** comparison of interface designs. **Limitation**: best for low-level physical tasks; doesn't capture learning or error recovery well.
+
+---
+
+## Relationships to Other Topics
+
+| Related Topic | Connection |
+|---------------|------------|
+| **Chapter 3 (Interaction models)** | Cognitive walkthrough's fourth question addresses the execution–evaluation cycle |
+| **Chapter 6 (Design processes)** | Evaluation feeds back into design; design rationale supports model-based evaluation |
+| **Chapter 7 (Usability principles)** | Heuristics are related to principles and guidelines; evaluation criteria drawn from Chapter 7 principles |
+| **Chapter 12 (GOMS in detail)** | GOMS/KLM discussed more thoroughly; prediction of user performance |
+| **Chapter 13 (Requirements)** | Observation and surveying users contribute to requirements capture |
+| **Chapter 16 (Dialog models)** | State transition networks evaluate dialog designs prior to implementation |
+| **Wizard of Oz (Ch. 6)** | Simulation technique for evaluating systems without full implementation |
+
+---
+
+## Common Misconceptions
+
+1. **"Evaluation is just testing at the end"** — WRONG. Evaluation should occur **throughout** the design lifecycle, with results feeding back continuously.
+2. **"Expert evaluation replaces user testing"** — WRONG. Expert methods don't assess actual use; they check adherence to principles. Both are needed.
+3. **"Five users are always enough"** — Nielsen's finding applies to observational studies finding usability issues. Controlled experiments with statistical analysis need larger samples (at least 10).
+4. **"More users = better experiment"** — Not necessarily. With between-subjects design, adding more users without controlling for variation can actually reduce statistical power.
+5. **"Parametric tests are always better"** — They're more powerful but require normal distribution. If the assumption is violated, results are invalid. Non-parametric tests are safer when assumptions are uncertain.
+6. **"Think aloud doesn't affect performance"** — It does. Describing what you're doing often changes how you do it (the centipede effect).
+7. **"Field studies are always more valid"** — They have ecological validity but are expensive, hard to control, and the observer effect still applies (Heisenberg uncertainty principle).
+8. **"Heuristic evaluation finds all problems"** — Five evaluators find ~75%. You need multiple independent evaluators.
+9. **"Subjective measures are useless"** — They provide high-level information (preferences, impressions) that objective measures miss. Ideally, both are used.
+10. **"Statistical significance = practical significance"** — A statistically significant result may have a trivially small effect size. Always consider both.
+
+---
+
+## Key Concepts for Exam
+
+1. **Evaluation goals**: assess functionality, user experience, and specific problems
+2. **Evaluation throughout design lifecycle** — cheapest to fix early, most expensive late
+3. **Cognitive walkthrough**: expert analyzes learning support per task step using **four questions** (goal match, visibility, recognition, feedback)
+4. **Heuristic evaluation** (Nielsen & Molich): **3–5 independent evaluators** check for violations of **10 heuristics**; severity rated **0–4**; **five evaluators find ~75%** of problems
+5. **Nielsen's 10 heuristics**: visibility of status, match real world, user control/freedom, consistency/standards, error prevention, recognition over recall, flexibility/efficiency, aesthetic/minimalist, help recover from errors, help/documentation
+6. **Review-based evaluation**: literature supports/refutes design; must verify transferability
+7. **GOMS model**: Goals, Operators, Methods, Selection — predicts user performance
+8. **KLM operators**: K (keystroke), P (pointing), Mh (mental), H (home to device), D (draw), Rc (system response), Wb (write), Bb (browse button)
+9. **Laboratory studies**: controlled, specialist equipment, lacks context
+10. **Field studies**: natural environment, context retained, observer effect applies
+11. **Experimental evaluation**: hypothesis → IV/DV → controlled conditions → statistical analysis
+12. **IV** (manipulated between conditions) vs **DV** (measured outcome)
+13. **Null hypothesis**: no difference — aim to **disprove** it
+14. **Between-subjects**: each subject does one condition (no transfer, more users needed)
+15. **Within-subjects**: each subject does all conditions (transfer possible via counterbalancing, fewer users needed)
+16. **Mixed design**: one variable between-groups, one within-groups
+17. **Parametric tests**: assume normal distribution (powerful but fragile)
+18. **Non-parametric tests**: no distribution assumption (rank-based; reliable but less powerful)
+19. **ANOVA**: used when discrete IV + normal DV (more than two groups)
+20. **Student's t test**: two-valued IV + normal DV
+21. **Look at your data; save your data** — two rules of statistical analysis
+22. **Group studies**: harder than single-user — more participants, scheduling, task design, data synchronization, extreme variation
+23. **Ethnography**: detailed contextual recording; observer remains outside the situation
+24. **Think aloud**: user describes thoughts — simple but subjective, affects performance
+25. **Cooperative evaluation**: user + evaluator collaborate; user encouraged to criticize system; evaluator can ask "why?" and "what-if?"
+26. **Protocol analysis**: paper/audio/video/logging/notebooks — mixed methods in practice
+27. **EVA (Experimental Video Annotator)**: automatic protocol analysis tool; tag events during recording
+28. **Post-task walkthroughs**: transcript replay — immediate or delayed; essential when user can't talk during task
+29. **Interviews**: flexible, probe deeply, subjective, time-consuming; top-down approach
+30. **Questionnaires**: quick, large groups, rigorous — **5 question styles** (general, open-ended, scalar, multi-choice, ranked)
+31. **Scalar scales**: 1–5 or 1–7 most effective; odd-numbered for neutral option
+32. **Pilot study**: test questionnaire on 4–5 users before distribution
+33. **Return rate**: questionnaires typically 25–30%; send to random subset
+34. **Eye tracking**: fixations (difficulty), saccades (movement), scan path (search strategy/cognitive load)
+35. **Physiological measures**: GSR (arousal/mental effort), EMG (task involvement), EEG (decision making/attention), heart activity (stress)
+36. **Limitation of physiological measures**: unclear relationship between changes and specific interaction events
+37. **Choosing method**: **8 dimensions** — stage, style, objectivity, measures, information level, immediacy, intrusiveness, resources
+38. **No single best method** — match to your stage, needs, and resources
+39. **Discount usability**: heuristic evaluation is cheap, flexible, works at any stage
+40. **Nielsen & Landauer**: 1 user → ~33% problems; 5 users → ~75% problems

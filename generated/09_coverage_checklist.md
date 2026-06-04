@@ -1,0 +1,299 @@
+# COVERAGE CHECKLIST — Chapters 1-9
+
+## Chapter 1: The Human — The User We Design For
+- [x] Human information processing model (Input → Memory → Processing → Output)
+- [x] Vision: physical reception + interpretation
+- [x] Rods (low light) vs Cones (colour)
+- [x] Visual angle and visual acuity
+- [x] Brightness and just noticeable difference
+- [x] Colour: hue, intensity, saturation
+- [x] Colour blindness: 8% males, 1% females
+- [x] Blue acuity lowest
+- [x] Optical illusions (Ponzo, Muller-Lyer)
+- [x] Reading: saccades + fixations
+- [x] Word shape recognition
+- [x] Negative contrast for screens
+- [x] Hearing: 20Hz-15kHz range
+- [x] Pitch, loudness, timbre
+- [x] Cocktail party phenomenon
+- [x] Touch: thermoreceptors, nociceptors, mechanoreceptors
+- [x] Kinesthesia
+- [x] Response time = reaction time + movement time
+- [x] Reaction times: visual ~200ms, auditory ~150ms, pain ~700ms
+- [x] Fitts' Law: Mt = a + b log₂(D/S + 1)
+- [x] Sensory memory: iconic, echoic, haptic
+- [x] STM: 7±2 chunks, ~200ms decay, ~70ms access
+- [x] Chunking
+- [x] LTM: episodic vs semantic
+- [x] LTM structures: semantic networks, frames, scripts, production rules
+- [x] Storage: rehearsal, distributed practice
+- [x] Forgetting: decay vs interference (retroactive/proactive)
+- [x] Retrieval: recall vs recognition
+- [x] Reasoning: deduction, induction, abduction
+- [x] Wason's Cards: poor at negative evidence
+- [x] Problem solving: Gestalt, Problem Space Theory, Analogy
+- [x] Skill acquisition: chunking
+- [x] Slips vs Mistakes
+- [x] Mental models
+- [x] Emotion theories: James-Lange, Cannon, Schacter-Singer
+- [x] Affect in design: positive → creative, negative → narrow
+- [x] Individual differences: long-term, short-term, changing
+- [ ] **HIGH PRIORITY**: Fitts' Law
+- [ ] **HIGH PRIORITY**: Memory systems (Sensory, STM, LTM)
+- [ ] **HIGH PRIORITY**: Slips vs Mistakes
+- [ ] **HIGH PRIORITY**: Colour blindness stats
+- [ ] **HIGH PRIORITY**: Chunking
+
+## Chapter 2: The Computer — The Other Half of the Dialogue
+- [x] Display technologies: CRT, LCD, plasma, OLED
+- [x] Resolution, colour depth, refresh rate
+- [x] Luminance, contrast, gamma
+- [x] Text vs Graphics displays
+- [x] Anti-aliasing
+- [x] Audio output: speech synthesis, earcons, auditory icons
+- [x] Haptic output: vibration, force feedback, texture
+- [x] QWERTY keyboard design (anti-jam, not speed)
+- [x] Dvorak keyboard
+- [x] Pointing devices: mouse, trackball, touchpad, joystick, pen/stylus
+- [x] Mouse: mechanical/optical/laser, relative positioning
+- [x] Pen/Stylus: occlusion problem
+- [x] Speech recognition: speaker-dependent vs independent, discrete vs continuous
+- [x] Gesture recognition
+- [x] Eye tracking: fixations, saccades, scan paths
+- [x] Brain-computer interface (BCI)
+- [x] Colour models: RGB (additive), HSB/HSV, CMYK (subtractive)
+- [x] Colour in interface design: red=warning, green=ok, blue=info
+- [x] Gamma correction
+- [x] Colour calibration, metamerism
+- [x] Screen design: grouping, alignment, white space, consistency
+- [x] Text display rules: sans-serif screens, 12pt min, 50-75 chars, 1.2-1.5 spacing
+- [x] Progressive disclosure
+- [ ] **HIGH PRIORITY**: Colour models (RGB, HSB, CMYK)
+- [ ] **HIGH PRIORITY**: Input device comparisons
+- [ ] **HIGH PRIORITY**: Colour blindness implications
+- [ ] **HIGH PRIORITY**: Display specifications
+
+## Chapter 3: The Interaction — Where Human Meets Computer
+- [x] Interaction terms: domain, goal, task
+- [x] Norman's 7 stages model
+- [x] Gulf of Execution vs Gulf of Evaluation
+- [x] Abowd & Beale framework: User, Input, System, Output (4 languages)
+- [x] Ergonomics/human factors
+- [x] Office vs Industrial interfaces
+- [x] Glass interfaces: pros/cons
+- [x] 8 interaction styles: CLI, menus, NL, Q&A, forms, spreadsheets, WIMP, 3D
+- [x] WIMP: Windows, Icons, Menus, Pointers
+- [x] Windows: overlapping vs tiled, scrollbars, title bars
+- [x] Menu types: pull-down, drop-down, fall-down, pop-up, pie, cascading
+- [x] Buttons: radio (exclusive) vs check boxes (non-exclusive)
+- [x] Dialog boxes
+- [x] Look and feel
+- [x] Initiative: who's in charge
+- [x] Modal dialog boxes: pre-emptive
+- [x] Flow (Csikszentmihalyi)
+- [x] Physical constraints: 6 types
+- [x] Fluidity: physical vs logical state
+- [x] Compliant interaction
+- [x] Value equation: perceived value > cost
+- [x] Discounted future problem
+- [x] Organizational design: coercion, enculturation, emergence
+- [ ] **HIGH PRIORITY**: Norman's 7 stages
+- [ ] **HIGH PRIORITY**: Gulfs of Execution and Evaluation
+- [ ] **HIGH PRIORITY**: Interaction styles comparison
+- [ ] **HIGH PRIORITY**: WIMP components
+- [ ] **HIGH PRIORITY**: Value equation
+
+## Chapter 4: Paradigms — The Big Ideas That Shaped HCI
+- [x] Paradigm shifts timeline: batch → time-sharing → networking → graphical → microprocessor → WWW → ubiquitous
+- [x] Batch processing: impersonal, no interaction
+- [x] Time-sharing: one computer, many users
+- [x] Networking: community computing
+- [x] Sketchpad (1962, Sutherland): first graphical interaction
+- [x] LOGO (1970s, Papert): programming for children
+- [x] Dynabook (Kay, Xerox PARC): personal computer vision
+- [x] Xerox Star (1981): first commercial windowing system
+- [x] Metaphor: relating computing to real life
+- [x] Direct manipulation (Shneiderman, 1982): 5 properties
+- [x] WYSIWYG
+- [x] Language vs Action tension
+- [x] Hypertext: Bush's memex (1945), Nelson's Xanadu
+- [x] Hypermedia, multimedia
+- [x] Multimodality: multiple communication channels
+- [x] CSCW: computer supported cooperative work
+- [x] Agent-based interfaces: return to language with proactivity
+- [x] Sensor-based & context-aware interaction
+- [ ] **HIGH PRIORITY**: Paradigm shifts timeline
+- [ ] **HIGH PRIORITY**: Direct manipulation properties
+- [ ] **HIGH PRIORITY**: Ubiquitous computing definition
+- [ ] **HIGH PRIORITY**: Key historical milestones
+
+## Chapter 5: Interaction Design Basics
+- [x] Design process: iterative, user-centered
+- [x] User-centered design: involve users throughout
+- [x] Personas: fictional users from research
+- [x] Cultural probes: self-documentation packages
+- [x] Contextual inquiry: observe + interview in natural environment
+- [x] Scenarios: concrete vs abstract
+- [x] Navigation: how users move through information space
+- [x] 4 golden rules: landmarks, routes, overviews, context
+- [x] Breadcrumbs
+- [x] Modes: modal vs modeless
+- [x] Information structures: hierarchical vs network
+- [x] Gestalt principles: proximity, similarity, closure, continuity
+- [x] Alignment, white space
+- [x] Physical controls
+- [x] Affordances: physical vs perceived
+- [x] Aesthetic-usability effect
+- [x] Colour in design: redundancy
+- [x] Internationalisation vs Localisation
+- [x] Prototyping: fidelity (low/high), strategy (throwaway/evolutionary/incremental)
+- [x] Iteration: test → learn → improve → repeat
+- [ ] **HIGH PRIORITY**: User-centered design
+- [ ] **HIGH PRIORITY**: Scenarios types
+- [ ] **HIGH PRIORITY**: Navigation golden rules
+- [ ] **HIGH PRIORITY**: Gestalt principles
+- [ ] **HIGH PRIORITY**: Affordances
+- [ ] **HIGH PRIORITY**: Prototyping types
+
+## Chapter 6: HCI in the Software Process
+- [x] Software lifecycle: requirements → architecture → design → coding → integration → maintenance
+- [x] Waterfall model: sequential, doesn't fit interactive systems
+- [x] Verification vs Validation
+- [x] Formality gap
+- [x] Usability engineering: measurable requirements
+- [x] Usability specification: 7 dimensions
+- [x] ISO 9241: effectiveness, efficiency, satisfaction
+- [x] Example ISO metrics
+- [x] Iterative design
+- [x] Prototypes: throwaway, incremental, evolutionary
+- [x] Storyboards
+- [x] Limited functionality simulations
+- [x] Wizard of Oz
+- [x] Design inertia
+- [x] Design rationale: benefits (6)
+- [x] Process-oriented vs Structure-oriented
+- [x] IBIS: Issues, Positions, Arguments
+- [x] gIBIS: graphical IBIS
+- [x] QOC: Questions, Options, Criteria
+- [x] DRL: Design Rationale Language
+- [x] Psychological design rationale
+- [x] Task-artefact cycle
+- [ ] **HIGH PRIORITY**: Verification vs Validation
+- [ ] **HIGH PRIORITY**: Usability engineering
+- [ ] **HIGH PRIORITY**: ISO 9241
+- [ ] **HIGH PRIORITY**: Prototyping types
+- [ ] **HIGH PRIORITY**: Design rationale approaches
+
+## Chapter 7: Design Rules
+- [x] Spectrum of design rules: principles → guidelines → standards
+- [x] Three principles: learnability, flexibility, robustness
+- [x] Learnability sub-principles: predictability, synthesizability, familiarity, generalizability, consistency
+- [x] Flexibility sub-principles: dialogue initiative, multithreading, task migratability, substitutivity, customizability
+- [x] Robustness sub-principles: observability, recoverability, responsiveness, task conformance
+- [x] Lamming's "Memory Noter"
+- [x] Standards: ISO 9241
+- [x] Guidelines: abstract vs detailed
+- [x] Nielsen's 10 Heuristics
+- [x] Shneiderman's 8 Golden Rules
+- [x] Norman's 7 Principles
+- [x] HCI design patterns: pattern languages
+
+- [x] Consistency dangers (QWERTY example)
+- [x] Hierarchy of principles
+- [ ] **HIGH PRIORITY**: Nielsen's 10 Heuristics
+- [ ] **HIGH PRIORITY**: Shneiderman's 8 Golden Rules
+- [ ] **HIGH PRIORITY**: Norman's 7 Principles
+- [ ] **HIGH PRIORITY**: Learnability/Flexibility/Robustness sub-principles
+
+
+## Chapter 8: Implementation Support
+- [x] Windowing systems: device independence + resource sharing
+- [x] Three architectures: app manages, kernel manages, separate process
+- [x] Client-server architecture
+- [x] X Windows (X11): client-server, window manager, X protocol
+- [x] Image models: pixels, PostScript, GKS, PHIGS
+- [x] Programming paradigms: read-evaluation loop vs notification-based (callbacks)
+- [x] Going with the grain: modal vs non-modal
+- [x] Toolkits: interaction objects, consistency, OO programming
+- [x] Java AWT vs Swing
+- [x] UIMS: separation of presentation and application semantics
+- [x] Benefits of separation: portability, reusability, multiple interfaces, customizability
+- [x] Seeheim model: Presentation ↔ Dialogue Control ↔ Functionality
+- [x] Switch for rapid semantic feedback
+- [x] Feedback levels: lexical, syntactic, semantic
+- [x] Arch/Slinky: 5 layers (Physical → Lexical → Dialogue → FCA → Functional Core)
+- [x] Slinky analogy
+- [x] MVC: Model, View, Controller
+- [x] MVC practical limitation: controller talks to view
+- [x] PAC: Abstraction, Presentation (unified), Control (hierarchical)
+- [x] PAC vs MVC comparison
+- [x] Implementation techniques: state diagrams, grammars, events, declarations, constraints, graphical
+- [x] Constraints: say what's true, not what happens
+- [x] ALV: Abstraction-Link-View for groupware
+- [x] Dialogue control drift: internal → external → presentation
+- [ ] **HIGH PRIORITY**: Windowing systems function
+- [ ] **HIGH PRIORITY**: MVC components and limitation
+- [ ] **HIGH PRIORITY**: Seeheim model layers
+- [ ] **HIGH PRIORITY**: UIMS benefits
+- [ ] **HIGH PRIORITY**: Toolkits purpose
+
+## Chapter 9: Evaluation Techniques
+- [x] Evaluation goals: assess functionality, user experience, specific problems
+- [x] Evaluation throughout design lifecycle
+- [x] Expert evaluation vs user participation
+- [x] Cognitive walkthrough: 4 questions
+- [x] Heuristic evaluation: Nielsen & Molich, 3-5 evaluators, 10 heuristics, severity 0-4
+- [x] Nielsen's severity rating scale
+- [x] Five evaluators find ~75% of problems
+- [x] Model-based evaluation: GOMS, KLM
+- [x] Using previous studies
+- [x] Laboratory vs Field studies
+- [x] Experimental evaluation: IV, DV, hypotheses, null hypothesis
+- [x] Between-subjects vs Within-subjects vs Mixed design
+- [x] Control condition, counterbalancing, transfer effect
+- [x] Statistical analysis: parametric vs non-parametric
+- [x] Data types: discrete, continuous, positive continuous
+- [x] Common tests: t-test, ANOVA, regression, Wilcoxon, Spearman
+- [x] Three questions: difference, size, accuracy
+- [x] Evaluating group systems: challenges and solutions
+- [x] Observational techniques: think aloud, cooperative evaluation
+- [x] Protocol analysis: paper, audio, video, logging, notebooks
+- [x] EVA (Experimental Video Annotator)
+- [x] Post-task walkthroughs
+- [x] Query techniques: interviews, questionnaires
+- [x] Questionnaire styles: general, open-ended, scalar, multi-choice, ranked
+- [x] Scalar scale design: 1-5 or 1-7
+- [x] Pilot study, return rate
+- [x] Specific questionnaires: QUIS, SUS, NASA-TLX
+- [x] Physiological measures: eye tracking, GSR, EMG, EEG, heart activity
+- [x] Eye tracking: fixations, saccades, scan paths
+- [x] Choosing method: 8 dimensions
+- [x] Classification tables (9.4-9.7)
+- [x] GOMS: Goals, Operators, Methods, Selection
+- [x] KLM operators: K, P, Mh, H, D, Rc, Wb, Bb
+- [x] KLM time calculation
+- [x] Nielsen & Landauer: 1 user ~33%, 5 users ~75%
+- [ ] **HIGH PRIORITY**: Cognitive walkthrough 4 questions
+- [ ] **HIGH PRIORITY**: Heuristic evaluation process
+- [ ] **HIGH PRIORITY**: Nielsen's 10 heuristics (again)
+- [ ] **HIGH PRIORITY**: GOMS/KLM components
+- [ ] **HIGH PRIORITY**: KLM operators and times
+- [ ] **HIGH PRIORITY**: Experimental design types
+- [ ] **HIGH PRIORITY**: Parametric vs non-parametric tests
+- [ ] **HIGH PRIORITY**: Choosing evaluation method dimensions
+
+## CROSS-CHAPTER CONCEPTS
+- [x] Iterative design (Chapters 5, 6, 9)
+- [x] User-centered design (Chapters 5, 6)
+- [x] Colour blindness (Chapters 1, 2, 5)
+- [x] Consistency (Chapters 5, 7)
+- [x] Affordances (Chapters 5, 7)
+- [x] Mental models (Chapters 1, 3)
+- [x] Error types (Chapters 1, 3, 7)
+- [x] Evaluation methods (Chapters 6, 9)
+- [x] Prototyping (Chapters 5, 6)
+- [x] Design rationale (Chapters 6, 9)
+- [x] Usability principles (Chapters 7, 9)
+- [x] Interaction models (Chapters 3, 8)
+- [x] Implementation architectures (Chapter 8)
+- [x] Statistical analysis (Chapter 9)
