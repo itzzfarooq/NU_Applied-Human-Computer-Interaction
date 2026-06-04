@@ -102,6 +102,19 @@ Best practice: understand the **justification** behind guidelines — this helps
 
 "Broad brush" design rules. Not perfect, but **better than nothing**. Three famous collections:
 
+### Nielsen's 10 Heuristics
+
+1. **Visibility of system status** — keep users informed about what's happening
+2. **Match between system and the real world** — speak the user's language
+3. **User control and freedom** — easy undo/redo, "emergency exit"
+4. **Consistency and standards** — follow platform conventions
+5. **Error prevention** — better than good error messages
+6. **Recognition rather than recall** — minimize memory load
+7. **Flexibility and efficiency of use** — accelerators for experts
+8. **Aesthetic and minimalist design** — no irrelevant information
+9. **Help users recognize, diagnose, and recover from errors** — clear error messages
+10. **Help and documentation** — searchable, concrete, step-by-step
+
 ### Shneiderman's 8 Golden Rules
 
 1. **Strive for consistency** — similar actions, similar results
@@ -157,6 +170,7 @@ Patterns don't exist in isolation — they link to other patterns in **languages
 3. **Flexibility**: multiple interaction ways — dialogue initiative, multithreading, task migratability, substitutivity, customizability
 4. **Robustness**: goal achievement support — observability, recoverability, responsiveness, task conformance
 5. **ISO 9241**: effectiveness, efficiency, satisfaction
-6. **Shneiderman's 8 Golden Rules**: consistency, shortcuts, feedback, closure, error prevention, reversal, locus of control, reduce memory load
-7. **Norman's 7 Principles**: knowledge in world/head, simplify tasks, visibility, mappings, constraints, design for error, standardize
+6. **Nielsen's 10 Heuristics**: visibility, real-world match, user control, consistency, error prevention, recognition over recall, flexibility, aesthetics, error recovery, help
+7. **Shneiderman's 8 Golden Rules**: consistency, shortcuts, feedback, closure, error prevention, reversal, locus of control, reduce memory load
+8. **Norman's 7 Principles**: knowledge in world/head, simplify tasks, visibility, mappings, constraints, design for error, standardize
 8. **Design patterns**: invariant solution to recurrent problem — capture practice, pattern languages
