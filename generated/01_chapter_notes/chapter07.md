@@ -1,207 +1,162 @@
-# Chapter 7: Design Rules - HCI Notes
+# Chapter 7: Design Rules — Principles, Standards, and Heuristics for Usability
 
-## Overview
-Chapter 7 covers design rules for usability: principles of usability, standards and guidelines, golden rules and heuristics (Shneiderman's 8 Golden Rules, Norman's 7 Principles), and HCI design patterns.
+## The Big Picture
 
----
+Chapters 5 and 6 covered *how* to design and *how* to fit HCI into the software process. This chapter provides the **rules of thumb** — the accumulated wisdom that helps designers make good decisions without reinventing the wheel every time.
 
-## 1. TYPES OF DESIGN RULES
-
-### Three Types
-1. **Principles** – abstract design rules, low authority, high generality
-2. **Standards** – specific design rules, high authority, limited application
-3. **Guidelines** – lower authority, more general application
-
-### Trade-off
-- Increasing generality ↔ Increasing authority
-- Guidelines: high generality, low authority
-- Standards: low generality, high authority
+Design rules exist on a spectrum from **abstract principles** (high generality, low authority) to **specific standards** (low generality, high authority). Guidelines sit in between.
 
 ---
 
-## 2. PRINCIPLES TO SUPPORT USABILITY
+## 1. THE SPECTRUM OF DESIGN RULES
 
-### Three Main Principles
+```
+Generality ↑                    Authority ↓
+       Principles (abstract, flexible)
+       Guidelines (moderate)
+       Standards (specific, rigid)
+Generality ↓                    Authority ↑
+```
 
-#### Learnability
-The ease with which new users can begin effective interaction and achieve maximal performance
-
-#### Flexibility
-The multiplicity of ways the user and system exchange information
-
-#### Robustness
-The level of support provided the user in determining successful achievement and assessment of goal-directed behaviour
-
----
-
-## 3. PRINCIPLES OF LEARNABILITY
-
-### Predictability
-- Determining effect of future actions based on past interaction history
-- **Operation visibility**
-
-### Synthesizability
-- Assessing the effect of past actions
-- Immediate vs eventual honesty
-
-### Familiarity
-- How prior knowledge applies to new system
-- **Guessability**; **affordance**
-
-### Generalizability
-- Extending specific interaction knowledge to new situations
-
-### Consistency
-- Likeness in input/output behaviour arising from similar situations or task objectives
+**Trade-off**: The more general a rule, the more situations it applies to — but the harder it is to enforce or verify. The more specific, the more enforceable — but the fewer situations it fits.
 
 ---
 
-## 4. PRINCIPLES OF FLEXIBILITY
+## 2. THREE PRINCIPLES TO SUPPORT USABILITY
 
-### Dialogue Initiative
-- Freedom from system imposed constraints on input dialogue
-- System vs user pre-emptiveness
+Everything in this chapter traces back to three high-level principles:
 
-### Multithreading
-- Ability of system to support user interaction for more than one task at a time
-- Concurrent vs interleaving; multimodality
-
-### Task Migratability
-- Passing responsibility for task execution between user and system
-
-### Substitutivity
-- Allowing equivalent values of input and output to be substituted for each other
-- Representation multiplicity; equal opportunity
-
-### Customizability
-- Modifiability of the user interface by user (**adaptability**) or system (**adaptivity**)
+| Principle | Question It Answers |
+|-----------|-------------------|
+| **Learnability** | Can new users start using it easily? |
+| **Flexibility** | Can users interact in multiple ways? |
+| **Robustness** | Does it support users in achieving their goals? |
 
 ---
 
-## 5. PRINCIPLES OF ROBUSTNESS
+## 3. LEARNABILITY — Making It Easy to Start
 
-### Observability
-- Ability of user to evaluate the internal state of the system from its perceivable representation
-- Browsability; defaults; reachability; persistence; operation visibility
+Five sub-principles that make a system easy to learn:
 
-### Recoverability
-- Ability of user to take corrective action once an error has been recognized
-- Reachability; forward/backward recovery; commensurate effort
-
-### Responsiveness
-- How the user perceives the rate of communication with the system
-- Stability
-
-### Task Conformance
-- Degree to which system services support all of the user's tasks
-- Task completeness; task adequacy
+| Principle | Definition | Practical Example |
+|-----------|-----------|------------------|
+| **Predictability** | Can you determine effect of future actions from past experience? | "Save" button always works the same way |
+| **Synthesizability** | Can you assess the effect of past actions? | Undo tells you what was undone |
+| **Familiarity** | Does prior knowledge apply? (Guessability / Affordance) | Trash can icon = delete |
+| **Generalizability** | Can you extend specific knowledge to new situations? | Ctrl+C / Ctrl+V in any app |
+| **Consistency** | Similar situations → similar input/output behaviour | All dialogs have OK/Cancel in same order |
 
 ---
 
-## 6. STANDARDS
+## 4. FLEXIBILITY — Supporting Multiple Ways to Interact
 
-### Definition
-Set by national or international bodies to ensure compliance by a large community of designers. Standards require sound underlying theory and slowly changing technology.
+Five sub-principles that give users choice:
 
-### Key Facts
-- Hardware standards more common than software
-- High authority and low level of detail
-- **ISO 9241** defines usability as effectiveness, efficiency and satisfaction
-
----
-
-## 7. GUIDELINES
-
-### Definition
-More suggestive and general. Many textbooks and reports full of guidelines.
-
-### Types
-- **Abstract guidelines** (principles) – applicable during early life cycle activities
-- **Detailed guidelines** (style guides) – applicable during later life cycle activities
-- Understanding justification for guidelines aids in resolving conflicts
+| Principle | Definition | Example |
+|-----------|-----------|---------|
+| **Dialogue Initiative** | Freedom from system-imposed constraints | User can interrupt system, not just respond |
+| **Multithreading** | Support multiple tasks at once | Concurrent (split screen) vs. interleaving (tab switching) |
+| **Task Migratability** | Pass responsibility between user and system | Spellcheck: system finds errors, user decides |
+| **Substitutivity** | Equivalent values can substitute for each other | Enter a date by typing or calendar picker |
+| **Customizability** | UI can be modified | **Adaptability** (user changes settings) vs. **Adaptivity** (system auto-adapts) |
 
 ---
 
-## 8. GOLDEN RULES AND HEURISTICS
+## 5. ROBUSTNESS — Supporting Goal Achievement
 
-### Definition
-"Broad brush" design rules. Useful check list for good design. Better design using these than using nothing!
+Four sub-principles that ensure users can accomplish their goals:
 
-### Different Collections
-- **Nielsen's 10 Heuristics** (see Chapter 9)
-- **Shneiderman's 8 Golden Rules**
-- **Norman's 7 Principles**
-
----
-
-## 9. SHNEIDERMAN'S 8 GOLDEN RULES
-
-1. **Strive for consistency**
-2. **Enable frequent users to use shortcuts**
-3. **Offer informative feedback**
-4. **Design dialogs to yield closure**
-5. **Offer error prevention and simple error handling**
-6. **Permit easy reversal of actions**
-7. **Support internal locus of control**
-8. **Reduce short-term memory load**
+| Principle | Definition | Key Concepts |
+|-----------|-----------|-------------|
+| **Observability** | Can user evaluate system state from what they see? | Browsability, defaults, reachability, persistence |
+| **Recoverability** | Can user correct errors once recognized? | Undo, forward/backward recovery, commensurate effort |
+| **Responsiveness** | How fast does the system feel? | Stability of response (consistent speed matters) |
+| **Task Conformance** | Does the system support all of the user's tasks? | Task completeness & task adequacy |
 
 ---
 
-## 10. NORMAN'S 7 PRINCIPLES
+## 6. STANDARDS — The Rule of Law
 
-1. **Use both knowledge in the world and knowledge in the head.**
-2. **Simplify the structure of tasks.**
-3. **Make things visible: bridge the gulfs of Execution and Evaluation.**
-4. **Get the mappings right.**
-5. **Exploit the power of constraints, both natural and artificial.**
-6. **Design for error.**
-7. **When all else fails, standardize.**
+**Standards** are set by national or international bodies. They have **high authority** but apply to **narrow situations**.
+
+- Hardware standards are more common than software
+- Require sound underlying theory and stable technology
+- **ISO 9241** — defines usability as effectiveness, efficiency, satisfaction
 
 ---
 
-## 11. HCI DESIGN PATTERNS
+## 7. GUIDELINES — The Middle Ground
 
-### Definition
-An approach to reusing knowledge about successful design solutions. Originated in architecture (Alexander). A pattern is an invariant solution to a recurrent problem within a specific context.
+**Guidelines** are more suggestive than standards, more concrete than principles.
 
-### Examples
-- **Architecture**: Light on Two Sides of Every Room
-- **HCI**: Go back to a safe place
+| Type | When Applied | Example |
+|------|-------------|---------|
+| **Abstract (principles)** | Early lifecycle | "Be consistent" |
+| **Detailed (style guides)** | Later lifecycle | "Use 12pt sans-serif for body text" |
+
+Best practice: understand the **justification** behind guidelines — this helps resolve conflicts when they contradict each other.
+
+---
+
+## 8. GOLDEN RULES AND HEURISTICS — The Practitioner's Toolkit
+
+"Broad brush" design rules. Not perfect, but **better than nothing**. Three famous collections:
+
+### Shneiderman's 8 Golden Rules
+
+1. **Strive for consistency** — similar actions, similar results
+2. **Enable frequent users to use shortcuts** — accelerators for experts
+3. **Offer informative feedback** — every action should have a response
+4. **Design dialogs to yield closure** — tell users when they're done
+5. **Offer error prevention and simple error handling** — prevent, then forgive
+6. **Permit easy reversal of actions** — undo is essential
+7. **Support internal locus of control** — users feel in charge, not the system
+8. **Reduce short-term memory load** — don't make users remember (7±2 rule)
+
+### Norman's 7 Principles
+
+1. **Use both knowledge in the world and knowledge in the head** — don't rely on memory alone
+2. **Simplify the structure of tasks** — reduce complexity
+3. **Make things visible** — bridge the gulfs of Execution and Evaluation
+4. **Get the mappings right** — natural relationships between controls and effects
+5. **Exploit the power of constraints** — natural and artificial
+6. **Design for error** — assume errors will happen
+7. **When all else fails, standardize** — if you can't make it intuitive, make it consistent
+
+---
+
+## 9. HCI DESIGN PATTERNS — Reusable Solutions
+
+### What Are Patterns?
+
+Originated in architecture (Christopher Alexander). A pattern is an **invariant solution to a recurrent problem within a specific context**.
+
+**Examples**:
+- Architecture: "Light on Two Sides of Every Room"
+- HCI: "Go back to a safe place"
 
 ### Pattern Languages
-- Patterns do not exist in isolation
-- Linked to other patterns in **languages** which enable complete designs to be generated
 
-### Characteristics of Patterns
-- Capture design practice not theory
-- Capture the essential common properties of good examples of design
-- Represent design knowledge at varying levels: social, organisational, conceptual, detailed
-- Embody values and can express what is humane in interface design
-- Are intuitive and readable → can be used for communication between all stakeholders
-- A pattern language should be generative and assist in the development of complete designs
+Patterns don't exist in isolation — they link to other patterns in **languages** that enable complete designs.
+
+### Characteristics of Good Patterns
+
+- Capture **practice** not theory
+- Capture the essential common properties of good designs
+- Represent knowledge at varying levels: social, organizational, conceptual, detailed
+- Embody values — can express what is humane in interface design
+- Intuitive and readable — usable by all stakeholders, not just designers
+- A pattern language should be **generative** — it should help create complete designs
 
 ---
 
 ## KEY CONCEPTS FOR EXAM
-1. **Types of design rules**: principles (abstract, low authority, high generality), standards (specific, high authority), guidelines (lower authority, general)
-2. **Learnability**: ease with which new users begin effective interaction
-3. **Flexibility**: multiplicity of ways user and system exchange information
-4. **Robustness**: support for determining successful achievement of goal-directed behaviour
-5. **Predictability**: determining effect of future actions from past history
-6. **Synthesizability**: assessing effect of past actions
-7. **Familiarity**: how prior knowledge applies to new system
-8. **Generalizability**: extending specific knowledge to new situations
-9. **Consistency**: likeness in input/output behaviour from similar situations
-10. **Dialogue initiative**: freedom from system-imposed constraints
-11. **Multithreading**: support for multiple tasks at a time
-12. **Task migratability**: passing responsibility between user and system
-13. **Substitutivity**: equivalent values for input/output
-14. **Customizability**: adaptability (user) vs adaptivity (system)
-15. **Observability**: evaluating internal state from perceivable representation
-16. **Recoverability**: corrective action after error recognized
-17. **Responsiveness**: perceived rate of communication
-18. **Task conformance**: system services support user's tasks
-19. **ISO 9241**: effectiveness, efficiency, satisfaction
-20. **Shneiderman's 8 Golden Rules**: consistency, shortcuts, feedback, closure, error prevention, reversal, locus of control, reduce memory load
-21. **Norman's 7 Principles**: knowledge in world/head, simplify tasks, visible mappings, constraints, design for error, standardize
-22. **Design patterns**: invariant solution to recurrent problem, pattern languages, capture practice not theory
+
+1. **Types of design rules**: principles (abstract, low authority) → guidelines → standards (specific, high authority)
+2. **Learnability**: ease for new users — predictability, synthesizability, familiarity, generalizability, consistency
+3. **Flexibility**: multiple interaction ways — dialogue initiative, multithreading, task migratability, substitutivity, customizability
+4. **Robustness**: goal achievement support — observability, recoverability, responsiveness, task conformance
+5. **ISO 9241**: effectiveness, efficiency, satisfaction
+6. **Shneiderman's 8 Golden Rules**: consistency, shortcuts, feedback, closure, error prevention, reversal, locus of control, reduce memory load
+7. **Norman's 7 Principles**: knowledge in world/head, simplify tasks, visibility, mappings, constraints, design for error, standardize
+8. **Design patterns**: invariant solution to recurrent problem — capture practice, pattern languages

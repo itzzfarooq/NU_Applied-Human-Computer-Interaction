@@ -1,215 +1,203 @@
-# Chapter 5: Interaction Design Basics - HCI Notes
+# Chapter 5: Interaction Design Basics — How to Actually Design Interfaces
 
-## Overview
-Chapter 5 is the largest and most critical chapter. It covers the design process, user focus, scenarios, navigation design, screen design principles, user action and control, affordances, aesthetics, colour, 3D, localisation, prototyping, and iteration. 92 slides total.
+## The Big Picture
+
+This is the **largest and most critical chapter** (92 slides). Previous chapters covered *what* human and computer bring to interaction and *how* we got here. This chapter is about the **process of designing** interactive systems: how to understand users, explore ideas, structure navigation, lay out screens, and iterate toward a good design.
+
+The core message: **design is iterative, user-centered, and never done right the first time.**
 
 ---
 
 ## 1. THE DESIGN PROCESS
 
 ### What is Design?
-- Design is about applying creative thought to produce a plan for making something
-- For interactive systems, we want to make systems that are usable
-- Design is iterative – you don't get it right first time
 
-### The Design Process
-- Designers don't work in isolation
-- They work with customers/clients
-- They work with users
-- They work with other designers
+Design = applying creative thought to produce a **plan** for making something. For interactive systems, the goal is **usable** systems.
 
-### User-Centered Design
-- Involve users throughout the design process
-- Designers need to understand users' tasks and requirements
-- Use multiple methods to understand users
+### Who Does Design?
 
----
+Designers don't work in isolation. They collaborate with:
+- **Customers/clients** — who pay for it
+- **Users** — who will use it
+- **Other designers** — who bring different expertise
 
-## 2. USER FOCUS
+### User-Centered Design (UCD)
 
-### Who are the Users?
-- Not everyone who uses the system
-- Not just those who operate the keyboard/mouse
-- Include: operators, customers, managers, co-workers, maintenance staff, trainees, etc.
-
-### Personas
-- Fictional users representing categories of real users
-- Give designers an understanding of goals and capabilities
-- Help designers argue for design features
-- Should be realistic, based on research
-
-### Cultural Probes
-- Packages of materials sent to participants
-- Participants document their own lives
-- Help designers understand context and culture
-- Not for direct requirements gathering
-
-### Contextual Inquiry
-- Observe and interview users in their natural work environment
-- Understand work practices, tools, environment
-- Build rapport with users
+The fundamental principle: **involve users throughout the design process**. You need to understand their tasks, their environment, and their requirements. Use multiple methods to build that understanding.
 
 ---
 
-## 3. SCENARIOS
+## 2. UNDERSTANDING THE USER
 
-### Definition
-- Stories about users and systems
-- Capture what a user might do
-- Illustrate how interaction takes place
-- Don't specify exact interface details
+### Who Are the Users?
 
-### Types of Scenarios
-- **Concrete scenarios**: specific instances, particular users, particular tasks
-- **Abstract scenarios**: general patterns, not tied to specific instances
+Not just the person at the keyboard. Also: operators, customers, managers, co-workers, maintenance staff, trainees — anyone affected by the system.
 
-### Using Scenarios
-- Explore design alternatives
-- Communicate design ideas
-- Evaluate design proposals
-- Document design rationale
+### Techniques for Understanding Users
+
+| Technique | How It Works | When to Use |
+|-----------|-------------|-------------|
+| **Personas** | Fictional users representing real user categories | Throughout design — keeps users in mind |
+| **Cultural probes** | Packages sent to participants to document their own lives | Early exploration of context/culture |
+| **Contextual inquiry** | Observe and interview users in their natural work environment | Understanding work practices |
+
+**Personas** are especially powerful — they give designers a concrete person to design for, help argue for features, and should be realistic and research-based.
+
+**Cultural probes** are NOT for direct requirements gathering — they inspire and reveal context.
+
+**Contextual inquiry** builds rapport and reveals what people actually do (vs. what they say they do).
 
 ---
 
-## 4. NAVIGATION DESIGN
+## 3. SCENARIOS — Stories About Use
+
+**Scenarios** are stories about users and systems. They capture what a user might do and illustrate how interaction takes place — without specifying exact interface details.
+
+| Type | What It Is | Use Case |
+|------|-----------|----------|
+| **Concrete** | Specific instance, particular user and task | Exploring specific design alternatives |
+| **Abstract** | General pattern, not tied to instance | Understanding general requirements |
+
+Scenarios help **explore alternatives, communicate ideas, evaluate proposals, and document rationale**.
+
+---
+
+## 4. NAVIGATION DESIGN — How Users Move Through the System
 
 ### What is Navigation?
-- How users move through an information space
-- Forward and backward movement
-- Moving between different parts of the system
 
-### Goal-Seeking
-- How users determine what to do next
-- Based on current state and desired goal
+Navigation = how users move through an information space. Forward, backward, between different parts of the system.
 
-### Local Navigation
-- Moving within a small area of the interface
-- Menu selection, tab switching, etc.
+### Goal-Seeking — How Users Decide What to Do Next
 
-### The Four Golden Rules
-1. **Provide landmarks** – help users know where they are
-2. **Provide routes** – clear paths through information
-3. **Provide overviews** – show overall structure
-4. **Provide context** – show relationship to other parts
+Users look at the current state, consider their goal, and choose an action. **Local navigation** is movement within a small area (menu selection, tab switching).
 
-### Breadcrumbs
-- Show the path the user has taken
-- Allow users to return to previous locations
-- Provide context and orientation
+### The Four Golden Rules of Navigation
+
+1. **Provide landmarks** — help users know **where they are**
+2. **Provide routes** — clear **paths** through information
+3. **Provide overviews** — show the **overall structure**
+4. **Provide context** — show relationship to other parts
+
+**Breadcrumbs** implement all four — they show the path taken, allow return, and provide orientation.
 
 ### Modes
-- Different states the interface can be in
-- Modal vs modeless interfaces
-- Modal: interface behaves differently depending on mode
-- Modeless: same behavior regardless of state
 
-### Hierarchical Diagrams
-- Tree structures for organizing information
-- Parent-child relationships
-- Good for hierarchical information
+| Type | Behaviour | Example |
+|------|-----------|---------|
+| **Modal** | Interface behaves differently depending on mode | Caps lock, drawing tool modes |
+| **Modeless** | Same behaviour regardless of state | Most scroll/zoom interactions |
 
-### Network Diagrams
-- More flexible than hierarchies
-- Allow multiple paths between nodes
-- Good for interconnected information
+### Information Structures
+
+| Structure | How It Works | Best For |
+|-----------|-------------|----------|
+| **Hierarchical** | Tree, parent-child relationships | Well-organized, nested info |
+| **Network** | Multiple paths between nodes | Interconnected, non-linear info |
 
 ---
 
-## 5. SCREEN DESIGN
+## 5. SCREEN DESIGN — The Visual Layer
 
-### Grouping
-- **Gestalt principles**:
-  - **Proximity**: items close together are perceived as a group
-  - **Similarity**: items that look alike are perceived as a group
-  - **Closure**: mind completes incomplete shapes
-  - **Continuity**: eye follows smooth paths
-- Group related items together
-- Separate unrelated items
+### Grouping — Gestalt Principles
+
+Our brains automatically group visual elements:
+
+| Principle | What It Means | Design Rule |
+|-----------|---------------|-------------|
+| **Proximity** | Close items → perceived as group | Group related items together |
+| **Similarity** | Alike items → perceived as group | Use consistent styles for same type |
+| **Closure** | Mind completes incomplete shapes | You don't need to draw everything |
+| **Continuity** | Eye follows smooth paths | Align elements along lines |
 
 ### Alignment
 - Visual consistency across the interface
 - Align elements to a grid
-- Creates order and professionalism
-- Reduces visual clutter
+- Creates order, professionalism, reduces clutter
 
 ### White Space
-- Space between elements
-- Gives elements room to breathe
+- Space between elements = breathing room
 - Reduces cognitive load
 - Improves readability and comprehension
-- Don't fill every pixel
+- **Don't fill every pixel**
 
 ### Physical Controls
-- Buttons, sliders, knobs
-- Consider ergonomics
-- Consider affordances
-- Consider feedback
+Buttons, sliders, knobs — consider ergonomics, affordances, and feedback.
 
 ---
 
 ## 6. USER ACTION AND CONTROL
 
 ### Affordances
-- Properties of an object that suggest how it can be used
-- A button "affords" pressing
-- A slider "affords" sliding
-- Real-world objects have physical affordances
-- Interface objects have perceived affordances
+
+**Affordance** = a property of an object that suggests how it can be used.
+- A button **affords** pressing
+- A slider **affords** sliding
+- Real objects have **physical** affordances
+- Interface objects have **perceived** affordances (learned, not innate)
 
 ### Aesthetics
-- How the interface looks and feels
-- Emotional response to design
-- Aesthetic-usability effect: attractive things work better
-- Consider visual design principles
+
+How the interface looks and feels triggers an emotional response. The **aesthetic-usability effect**: attractive things are perceived as working better. Good aesthetics matter for usability, not just beauty.
 
 ### Colour in Design
-- Use colour meaningfully
-- Consider colour blindness
-- Use colour consistently
-- Don't rely on colour alone
 
-### Internationalisation and Localisation
-- **Internationalisation**: designing for multiple cultures from the start
-- **Localisation**: adapting a product for a specific locale
-- Consider: text direction, date/time formats, currency, cultural symbols
+- Use colour meaningfully and consistently
+- Consider colour blindness (8% men, 1% women)
+- Don't rely on colour alone — use redundant cues
+
+### Internationalisation & Localisation
+
+| | What It Is | When |
+|---|---|---|
+| **Internationalisation** | Design for multiple cultures from the start | Before building |
+| **Localisation** | Adapt a product for a specific locale | Per market |
+
+Consider: text direction, date/time formats, currency, cultural symbols.
 
 ---
 
 ## 7. PROTOTYPING AND ITERATION
 
 ### Prototyping
-- Create mock-ups of the interface
-- Can be paper-based or electronic
-- Low-fidelity vs high-fidelity
-- Throwaway vs evolutionary vs incremental
 
-### Iteration
-- Refine design based on feedback
-- Test, learn, improve
-- Repeat until acceptable
-- Don't expect to get it right first time
+Create mock-ups to test ideas before building the real thing.
+
+| Dimension | Options |
+|-----------|---------|
+| **Fidelity** | Low (paper sketches) vs. High (interactive mock-ups) |
+| **Strategy** | Throwaway (discard after learning), Evolutionary (refine into final), Incremental (add piece by piece) |
+
+### Iteration — The Heart of Design
+
+```
+Test → Learn → Improve → Repeat (until acceptable)
+```
+
+**Don't expect to get it right the first time.** Each cycle reveals problems you couldn't have anticipated.
 
 ---
 
 ## KEY CONCEPTS FOR EXAM
-1. **Design process**: iterative, involves users, involves multiple methods
+
+1. **Design process**: iterative, user-involved, multiple methods
 2. **User-centered design**: involve users throughout
-3. **Personas**: fictional users representing real user categories
-4. **Cultural probes**: materials sent to participants to document their own lives
-5. **Contextual inquiry**: observe and interview users in natural environment
-6. **Scenarios**: stories about users and systems, capture what user might do
-7. **Navigation design**: how users move through information space
-8. **Four golden rules**: landmarks, routes, overviews, context
-9. **Breadcrumbs**: show path taken, allow return to previous locations
-10. **Modes**: modal (different behavior per mode) vs modeless (same behavior)
+3. **Personas**: fictional users from research, represent real categories
+4. **Cultural probes**: self-documentation packages for context
+5. **Contextual inquiry**: observe + interview in natural environment
+6. **Scenarios**: stories about use — concrete (specific) or abstract (general)
+7. **Navigation**: how users move through information space
+8. **4 golden rules**: landmarks, routes, overviews, context
+9. **Breadcrumbs**: path shown, enables return, gives orientation
+10. **Modes**: modal (context-dependent) vs modeless (consistent)
 11. **Gestalt principles**: proximity, similarity, closure, continuity
-12. **Grouping**: related items together, separate unrelated items
-13. **Alignment**: visual consistency, align to grid
-14. **White space**: room to breathe, reduces cognitive load
-15. **Affordances**: properties that suggest how to use (button affords pressing)
-16. **Aesthetics**: emotional response, aesthetic-usability effect
-17. **Colour blindness**: 8% males, 1% females, don't rely on colour alone
-18. **Internationalisation**: designing for multiple cultures
-19. **Localisation**: adapting for specific locale
-20. **Prototyping**: low/high fidelity, throwaway/evolutionary/incremental
-21. **Iteration**: refine based on feedback, test/learn/improve
+12. **Grouping**: related together, unrelated separated
+13. **Alignment**: grid-based consistency
+14. **White space**: reduces cognitive load
+15. **Affordances**: perceived properties that suggest use
+16. **Aesthetic-usability effect**: attractive → works better (perception)
+17. **Colour blindness**: 8% men, 1% women — never rely on colour alone
+18. **Internationalisation**: design for multiple cultures upfront
+19. **Localisation**: adapt per locale (dates, currency, symbols)
+20. **Prototyping**: low/high fidelity; throwaway/evolutionary/incremental
+21. **Iteration**: test, learn, improve — never right first time

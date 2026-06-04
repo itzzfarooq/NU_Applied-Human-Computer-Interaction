@@ -1,412 +1,276 @@
-# Chapter 3: The Interaction - HCI Notes
+# Chapter 3: The Interaction — Where Human Meets Computer
 
-## Overview
-Chapter 3 covers the interaction between humans and computers: interaction models (Norman's model, Abowd & Beale framework), ergonomics, interaction styles (command line, menus, natural language, WIMP, etc.), WIMP elements, interactivity, context, experience design, physical design, and managing value.
+## The Big Picture
+
+Chapters 1 and 2 established the human and the computer as separate systems. Chapter 3 is about what happens **between them** — the interaction itself. We explore:
+
+1. **Conceptual models** of interaction (Norman, Abowd & Beale)
+2. **Physical ergonomics** of interaction
+3. **Interaction styles** — the many ways humans have communicated with computers
+4. **WIMP** — the dominant style in detail
+5. **Context, experience, and value** — the softer side of interaction
 
 ---
 
 ## 1. WHAT IS INTERACTION?
 
-Interaction = communication between user and system
+Interaction is communication between user and system. Three key terms:
 
-But is that all? See "language and action" in Chapter 4...
+- **Domain** — the area of work (e.g., graphic design)
+- **Goal** — what you want to achieve (e.g., create a solid red triangle)
+- **Task** — how you go about doing it (e.g., select fill tool, click over triangle)
 
-### Terms of Interaction
-- **Domain** – the area of work under study (e.g. graphic design)
-- **Goal** – what you want to achieve (e.g. create a solid red triangle)
-- **Task** – how you go about doing it (ultimately in terms of operations or actions)
-  - Example: select fill tool, click over triangle
-
-**Note**: Traditional interaction – use of terms differs a lot, especially task/goal!
+> Note: These terms are used differently across the HCI literature — especially task vs. goal!
 
 ---
 
-## 2. NORMAN'S MODEL
+## 2. TWO FRAMEWORKS FOR UNDERSTANDING INTERACTION
 
-### Seven Stages
-1. User establishes the **goal**
-2. Formulates **intention**
-3. **Specifies actions** at interface
-4. **Executes action**
-5. **Perceives** system state
-6. **Interprets** system state
-7. **Evaluates** system state with respect to goal
+### Norman's Model — The User's View
 
-### Key Insight
-Norman's model concentrates on **user's view** of the interface.
+Norman describes interaction as **7 stages** in a cycle:
 
-### Execution/Evaluation Loop
-- Circular flow: goal → execution → system → evaluation → goal
-- Three execution stages: formulate intention, specify actions, execute action
-- Three evaluation stages: perceive state, interpret state, evaluate state
+```
+1. Establish goal
+2. Form intention
+3. Specify actions
+4. Execute action
+        ↓
+5. Perceive system state
+6. Interpret state
+7. Evaluate state vs. goal
+```
 
-### Gulfs
-- **Gulf of Execution**: user's formulation of actions ≠ actions allowed by the system
-- **Gulf of Evaluation**: user's expectation of changed system state ≠ actual presentation of this state
+This is an **execution/evaluation loop** — three stages to act, three to assess.
 
-### Human Error - Slips and Mistakes
-- **Slip**: understand system and goal, correct formulation of action, but incorrect action
-- **Mistake**: may not even have right goal!
-- **Fixing**: slip → better interface design; mistake → better understanding of system
+**Two critical gaps** can break the loop:
 
----
+| Gulf | Problem | Example |
+|------|---------|---------|
+| **Gulf of Execution** | User's intended actions ≠ what the system allows | You want to save, but can't find the save button |
+| **Gulf of Evaluation** | User's expected feedback ≠ what the system shows | You hit save, but nothing on screen confirms it |
 
-## 3. ABOWD AND BEALE FRAMEWORK
+**Error connection**: A **slip** = correct goal, wrong action (bridge the execution gulf). A **mistake** = wrong goal (bridge the evaluation gulf).
 
-### Extension of Norman's Model
-Their interaction framework has 4 parts:
-- **User** (U)
-- **Input** (I)
-- **System** (S)
-- **Output** (O)
+### Abowd & Beale Framework — The System's View
 
-Each has its own unique language. Interaction = translation between languages. Problems in interaction = problems in translation.
+An extension of Norman that models interaction as **translation between four languages**:
 
-### Translation Process
-User intentions → translated into actions at the interface → translated into alterations of system state → reflected in the output display → interpreted by the user
+```
+User (U) ↔ Input (I) ↔ System (S) ↔ Output (O)
+```
 
-### Benefits
-- General framework for understanding interaction
-- Not restricted to electronic computer systems
-- Identifies all major components involved in interaction
-- Allows comparative assessment of systems
-- An abstraction
+Each component has its **own language**. Interaction is a **translation** between them. Problems in interaction = breakdowns in translation.
+
+Example: You want to delete a file (U-language) → you drag it to the trash (I-language) → the OS updates its file table (S-language) → the icon disappears (O-language) → you see it's gone (back to U).
+
+**Benefits**: General (not just computers), identifies all major components, allows comparing different systems.
 
 ---
 
-## 4. ERGONOMICS
+## 3. ERGONOMICS — The Physical Side
 
-### Definition
-Study of the physical characteristics of interaction. Also known as **human factors**.
+**Ergonomics (human factors)** studies the physical characteristics of interaction.
 
-### Examples
-- **Arrangement of controls and displays** – grouped according to function or frequency of use
-- **Surrounding environment** – seating arrangements adaptable to all sizes
-- **Health issues** – physical position, environmental conditions (temperature, humidity), lighting, noise
-- **Use of colour** – red for warning, green for okay, awareness of colour-blindness
+### Key Concerns
 
-### Office vs Industrial Interfaces
+- **Arrangement of controls** — grouped by function or frequency
+- **Environment** — seating, lighting, temperature, noise
+- **Health** — physical position, environmental conditions
+- **Colour** — red = warning, green = okay, remember colour blindness
+
+### Office vs. Industrial Interfaces
+
 | | Office | Industrial |
-|---|---|---|
-| Type of data | Textual | Numeric |
+|--|--------|------------|
+| Data type | Textual | Numeric |
 | Rate of change | Slow | Fast |
 | Environment | Clean | Dirty |
+| Manipulation | Direct (user interacts with artificial world) | Indirect (user interacts with real world *through* interface) |
 
 ### Glass Interfaces
-- Industrial interface: traditional (dials and knobs) → now (screens and keypads)
-- **Glass interface advantages**: cheaper, more flexible, multiple representations, precise values
-- **Glass interface disadvantages**: not physically located, loss of context, complex interfaces
-- May need both traditional and glass interfaces
 
-### Indirect Manipulation
-- **Office**: direct manipulation – user interacts with artificial world
-- **Industrial**: indirect manipulation – user interacts *with* real world *through* interface
-- Issues: feedback, delays
+Traditional industrial interfaces (dials, knobs) → modern screens and keypads.
 
----
+| Pros | Cons |
+|------|------|
+| Cheaper, more flexible | Not physically located |
+| Multiple representations | Loss of context |
+| Precise values | Complex interfaces |
 
-## 5. INTERACTION STYLES
-
-### Common Styles
-1. Command line interface
-2. Menus
-3. Natural language
-4. Question/answer and query dialogue
-5. Form-fills and spreadsheets
-6. WIMP
-7. Point and click
-8. Three-dimensional interfaces
-
-### Command Line Interface
-- Way of expressing instructions directly (function keys, characters, abbreviations, words)
-- Suitable for repetitive tasks
-- Better for expert users than novices
-- Offers direct access to system functionality
-- Command names/abbreviations should be meaningful
-- **Typical example**: Unix system
-
-### Menus
-- Set of options displayed on screen
-- Options visible → less recall → easier to use
-- Rely on recognition → names should be meaningful
-- Selection by: numbers, letters, arrow keys, mouse, combinations
-- Often hierarchically grouped → sensible grouping needed
-- Restricted form of full WIMP system
-
-### Natural Language
-- Familiar to user
-- Speech recognition or typed natural language
-- **Problems**: vague, ambiguous, hard to do well
-- **Solutions**: try to understand a subset, pick on key words
-
-### Query Interfaces
-- **Question/answer**: user led through interaction via series of questions, suitable for novice users but restricted functionality
-- **Query languages** (e.g. SQL): used to retrieve information from database, requires understanding of database structure and language syntax
-
-### Form-fills
-- Primarily for data entry or data retrieval
-- Screen like paper form
-- Data put in relevant place
-- Requires good design and obvious correction facilities
-
-### Spreadsheets
-- First spreadsheet: VisiCalc, followed by Lotus 1-2-3, MS Excel most common today
-- Sophisticated variation of form-filling
-- Grid of cells contain a value or a formula
-- Formula can involve values of other cells
-- User can enter and alter data; spreadsheet maintains consistency
+Sometimes you need **both** traditional and glass interfaces.
 
 ---
 
-## 6. WIMP INTERFACE
+## 4. INTERACTION STYLES — The Many Ways to Talk to a Computer
 
-### Components
-- **W**indows
-- **I**cons
-- **M**enus
-- **P**ointers
+Eight major styles, roughly ordered from oldest to newest:
 
-Or: windows, icons, mice, and pull-down menus!
-
-### Default Style
-Default style for majority of interactive computer systems, especially PCs and desktop machines.
-
-### Additional Elements
-- Buttons, toolbars, palettes, dialog boxes
+| Style | How It Works | Best For | Weakness |
+|-------|-------------|----------|----------|
+| **Command Line** | Type instructions directly | Experts, repetitive tasks | Steep learning curve |
+| **Menus** | Choose from visible options | Novices (recognition > recall) | Screen space, hierarchy depth |
+| **Natural Language** | Speak or type naturally | Everyone (familiar) | Ambiguous, hard to implement |
+| **Q&A / Query** | System asks, user answers | Novices, database queries | Restricted functionality |
+| **Form-fills** | Fill in fields like paper forms | Data entry | Needs good design |
+| **Spreadsheets** | Grid of cells with values/formulas | Financial modeling | Specialized use |
+| **WIMP** | Windows, Icons, Menus, Pointers | General-purpose | Complex to implement |
+| **3D Interfaces** | Navigate virtual spaces | Gaming, simulation | Hard to use for productivity |
 
 ---
 
-## 7. WIMP ELEMENTS IN DETAIL
+## 5. WIMP — The Dominant Paradigm
 
-### Windows
-- Areas of the screen that behave as if they were independent
+### The Big Four
+
+- **W**indows — independent screen areas that can move, resize, overlap, or tile
+- **I**cons — small pictures representing objects or actions
+- **M**enus — lists of operations to select from
+- **P**ointers — graphical cursors controlled by mouse/trackpad/keys
+
+Plus: buttons, toolbars, palettes, dialog boxes.
+
+### Windows in Detail
 - Can contain text or graphics
-- Can be moved or resized
-- Can overlap (overlapping) or be laid out next to one another (tiled)
-- **Scrollbars** – allow user to move contents up/down or side to side
-- **Title bars** – describe the name of the window
+- **Scrollbars** move contents
+- **Title bars** name the window
+- Two layouts: **overlapping** (modern) or **tiled** (side by side)
 
-### Icons
-- Small picture or image
-- Represents some object in the interface (often a window or action)
-- Windows can be closed down (iconised) → small representation for many accessible windows
-- Can be highly stylized or realistic representations
+### Menus in Detail
 
-### Pointers
-- Important component – WIMP style relies on pointing and selecting things
-- Uses mouse, trackpad, joystick, trackball, cursor keys or keyboard shortcuts
-- Wide variety of graphical images (arrow, crosshair, target, etc.)
+**How menus appear:**
+- **Menu bar** at top → drags down
+  - Pull-down: hold and drag
+  - Drop-down: click reveals
+  - Fall-down: mouse over bar
+- **Contextual menu** (pop-up): appears where you click
+- **Pie menu**: arranged in a circle (larger targets, equal distance — but not widely used)
 
-### Menus
-- Choice of operations or services offered on the screen
-- Required option selected with pointer
-- **Problem**: take a lot of screen space
-- **Solution**: pop-up – menu appears when needed
-
-### Kinds of Menus
-- **Menu Bar** at top of screen, menu drags down
-  - **Pull-down menu** – mouse hold and drag down
-  - **Drop-down menu** – mouse click reveals menu
-  - **Fall-down menus** – mouse just moves over bar!
-- **Contextual menu** appears where you are
-  - **Pop-up menus** – actions for selected object
-  - **Pie menus** – arranged in a circle
-    - Easier to select item (larger target area)
-    - Quicker (same distance to any option)
-    - ... but not widely used!
-
-### Menu Extras
-- **Cascading menus** – hierarchical menu structure, selection opens new menu
-- **Keyboard accelerators** – key combinations, same effect as menu item
-  - Active when menu open – usually first letter
-  - Active when menu closed – usually Ctrl + letter (usually different!)
-
-### Menu Design Issues
-- Which kind to use
-- What to include in menus at all
-- Words to use (action or description)
-- How to group items
-- Choice of keyboard accelerators
+**Menu extras:**
+- **Cascading**: sub-menus within menus
+- **Keyboard accelerators**: Ctrl+letter shortcuts
+- **Tear-off menus**: menu detaches to become a floating palette
 
 ### Buttons
-- Individual and isolated regions within a display that can be selected to invoke an action
-- **Radio buttons** – set of mutually exclusive choices
-- **Check boxes** – set of non-exclusive choices
+- **Radio buttons**: mutually exclusive (choose one)
+- **Check boxes**: non-exclusive (choose many)
 
-### Toolbars
-- Long lines of icons for fast access to common actions
-- Often customizable: choose which toolbars to see, what options on it
-
-### Palettes and Tear-off Menus
-- **Problem**: menu not there when you want it
-- **Solution**: 
-  - Palettes – little windows of actions, shown/hidden via menu option
-  - Tear-off and pin-up menus – menu 'tears off' to become palette
-
-### Dialogue Boxes
-- Information windows that pop up to inform of an important event or request information
-- Example: saving a file → dialogue box for filename and location → disappears after save
+### Dialog Boxes
+Pop-up windows that demand information or announce events (e.g., "Save As..." dialog).
 
 ---
 
-## 8. INTERACTIVITY
+## 6. INTERACTIVITY — Look, Feel, and Control
 
 ### Look and Feel
-- WIMP systems have the same elements: windows, icons, menus, pointers, buttons, etc.
-- But different window systems *behave* differently
-- Example: MacOS vs Windows menus
-- **Appearance + behaviour = look and feel**
+Two systems can have the same WIMP elements but behave differently (e.g., Mac vs. Windows menus). **Appearance + behaviour = look and feel.**
 
-### Initiative
-- Who has the initiative?
-  - Old question-answer → computer
-  - WIMP interface → user
-- WIMP exceptions: **pre-emptive** parts of the interface
-  - **Modal dialog boxes** – come and won't go away!
-  - Good for errors, essential steps
-  - But use with care
+### Initiative — Who's in Charge?
+
+| Style | Who Leads |
+|-------|-----------|
+| Old Q&A systems | Computer |
+| WIMP | **User** (mostly) |
+| **Modal dialog boxes** | Computer (temporarily) — "won't go away!" |
+
+Modal dialogs are **pre-emptive** — good for errors and essential steps, but use with care.
 
 ### Error and Repair
-- Can't always avoid errors... but we can put them right
-- Make it easy to *detect* errors → then the user can *repair* them
+Errors are inevitable. Make them easy to **detect**, then easy to **repair**.
 
 ---
 
-## 9. CONTEXT
+## 7. CONTEXT — Interaction Doesn't Happen in a Vacuum
 
-Interaction affected by social and organizational context:
-- **Other people** – desire to impress, competition, fear of failure
-- **Motivation** – fear, allegiance, ambition, self-satisfaction
-- **Inadequate systems** – cause frustration and lack of motivation
-
----
-
-## 10. EXPERIENCE, ENGAGEMENT AND FUN
-
-### Experience
-- Home, entertainment, shopping – not enough that people *can* use a system, they must *want* to use it!
-- Psychology of experience: **flow** (Csikszentmihalyi) – balance between anxiety and boredom
-- Education: **zone of proximal development** – things you can just do with help
-- Wider: literary analysis, film studies, drama
-
-### Designing Experience (Christmas Cracker Example)
-| | Real cracker | Virtual cracker |
-|---|---|---|
-| **Surface elements** | | |
-| Design | cheap and cheerful | simple page/graphics |
-| Play | plastic toy and joke | web toy and joke |
-| Dressing up | paper hat | mask to cut out |
-| **Experienced effects** | | |
-| Shared | offered to another | sent by email message |
-| Co-experience | pulled together | sender can't see content until opened |
-| Excitement | cultural connotations | recruited expectation |
-| Hiddenness | contents inside | first page - no contents |
-| Suspense | pulling cracker | slow... page change |
-| Surprise | bang (when it works) | WAV file (when it works) |
+People are affected by:
+- **Other people** — competition, fear of failure, desire to impress
+- **Motivation** — fear, allegiance, ambition, self-satisfaction
+- **Inadequate systems** — cause frustration and kill motivation
 
 ---
 
-## 11. PHYSICAL DESIGN
+## 8. EXPERIENCE, ENGAGEMENT, AND FUN
 
-### Constraints
-- **Ergonomic** – minimum button size
-- **Physical** – high-voltage switches are big
-- **Legal and safety** – high cooker controls
-- **Context and environment** – easy to clean
-- **Aesthetic** – must look good
-- **Economic** – ... and not cost too much!
+Not enough that people *can* use a system — they must *want* to.
 
-### Design Trade-offs
-Constraints are contradictory → need trade-offs
+**Flow** (Csikszentmihalyi): the optimal experience between anxiety and boredom. Related to **zone of proximal development** (education) — things you can just do with help.
 
-**Within categories**: e.g. safety – cooker controls: front panel safer for adult, rear panel safer for child
+**Christmas cracker example**: A virtual cracker must reproduce the experience — sharedness, co-experience, excitement, hiddenness, suspense, surprise. The surface elements (design, play, dressing up) must produce the right *experienced effects*.
 
-**Between categories**: e.g. ergonomics vs. physical – MiniDisc remote: controls need to be bigger, no room → solution: multifunction controls & reduced functionality
+---
 
-### Fluidity
-- Do external physical aspects reflect logical effect?
-- Related to affordance (Chapter 5)
-- Logical state revealed in physical state? (e.g. on/off buttons)
-- Inverse actions → inverse effects? (e.g. arrow buttons, twist controls)
+## 9. PHYSICAL DESIGN — Real-World Constraints
 
-### Spring-back Controls
-- One-shot buttons, joystick, some sliders
-- Good: large selection sets
-- Bad: hidden state
+### Six Types of Constraints (Often Contradictory)
 
-### Physical Layout
-- Controls: logical relationship ≈ spatial grouping
-- Example: Microwave control panel – grouped controls for different functions
+1. **Ergonomic** — minimum button size
+2. **Physical** — high-voltage switches are big
+3. **Legal & safety** — cooker controls placement
+4. **Context & environment** — easy to clean
+5. **Aesthetic** — must look good
+6. **Economic** — ...and not cost too much
+
+Trade-offs exist **within** categories (front vs. rear cooker controls: both have different safety profiles) and **between** categories (ergonomics vs. physical: MiniDisc remote controls need to be bigger, but there's no room → multifunction controls).
+
+### Fluidity — Does Physical Reflect Logical?
+- Does the controller's physical state match the system's logical state? (e.g., toggle switch up = on)
+- Inverse actions → inverse effects? (arrow buttons, twist controls)
+- **Spring-back controls** (one-shot buttons, joysticks) — good for large selection sets, bad because they hide state.
 
 ### Compliant Interaction
-- State evident in mechanical buttons
-- Rotary knobs reveal internal state and can be controlled by both user and machine
+- Mechanical buttons reveal their state visually
+- Rotary knobs can be controlled by both user and machine — the state is evident
 
 ---
 
-## 12. MANAGING VALUE
+## 10. MANAGING VALUE — Why People Actually Use Things
 
 ### The Value Equation
+
 People use something **ONLY IF**:
 - It has **perceived value**
 - **AND** value exceeds cost
 
-**BUT NOTE**: exceptions (e.g. habit), value NOT necessarily personal gain or money
+**Value**: helps work, fun, good for others
+**Cost**: download time, money, learning effort
 
-### Weighing Up Value
-**Value**:
-- Helps me get my work done
-- Fun
-- Good for others
+### The Discounted Future Problem
+People heavily discount future value and future cost. This is why there's resistance to learning — the short-term cost looms larger than the long-term benefit. **Solution**: low barriers + high perceived present value.
 
-**Cost**:
-- Download time
-- Money
-- Learning effort
+### Making People Do Things (Organizational Design)
 
-### Discounted Future
-- In economics: Net Present Value, discount by (1+rate)^years to wait
-- In life: people heavily discount future value and future cost
-- Hence resistance to learning
-- Need low barriers and high perceived present value
-
-### Value and Organisational Design
-- **Coercion** – tell people what to do! Value = keep your job
-- **Enculturation** – explain corporate values, establish support (e.g. share options)
-- **Emergence** – design process so that individuals value → organisational value
+| Strategy | How It Works |
+|----------|-------------|
+| **Coercion** | "Do it or you're fired" — value = keeping your job |
+| **Enculturation** | Explain corporate values, share options — align individual with organization |
+| **Emergence** | Design the process so individual value → organizational value naturally |
 
 ### General Lesson
-If you want someone to do something:
-- Make it easy for them!
-- Understand their values
+If you want someone to do something: **make it easy for them** and **understand their values**.
 
 ---
 
 ## KEY CONCEPTS FOR EXAM
-1. **Terms of interaction**: domain (area of work), goal (what to achieve), task (how to do it)
-2. **Norman's model**: 7 stages – goal, intention, specify actions, execute, perceive, interpret, evaluate
-3. **Execution/evaluation loop**: circular flow between user's goals and system state
-4. **Gulf of Execution**: user's formulation ≠ system's allowed actions
-5. **Gulf of Evaluation**: user's expectation ≠ actual system state
-6. **Slips**: right intention, wrong action; **Mistakes**: wrong intention
-7. **Abowd & Beale framework**: User, Input, System, Output – each with own language, interaction = translation
-8. **Ergonomics**: physical characteristics, human factors, health issues, colour use
-9. **Office vs Industrial**: text vs numeric, slow vs fast, clean vs dirty
-10. **Glass interfaces**: cheaper, more flexible, but loss of context
-11. **Indirect manipulation**: industrial – user interacts with real world through interface
-12. **Command line**: direct access, better for experts, repetitive tasks
-13. **Menus**: visible options, less recall, recognition-based, hierarchical grouping
-14. **WIMP**: Windows, Icons, Menus, Pointers – default style for most systems
-15. **Windows**: independent areas, scrollbars, title bars, overlapping/tiled
-16. **Icons**: small pictures representing objects/actions
-17. **Pointers**: mouse/trackpad/joystick, graphical images for pointing
-18. **Menu types**: pull-down, drop-down, fall-down, pop-up, pie, cascading
-19. **Buttons**: radio buttons (mutually exclusive), check boxes (non-exclusive)
-20. **Look and feel**: appearance + behaviour
-21. **Modal dialog boxes**: pre-emptive, good for errors/essential steps
-22. **Flow** (Csikszentmihalyi): balance between anxiety and boredom
-23. **Physical design constraints**: ergonomic, physical, legal/safety, context, aesthetic, economic
-24. **Fluidity**: external physical aspects reflect logical effect
-25. **Value equation**: use something IF perceived value > cost
-26. **Discounted future**: people discount future value → resistance to learning → need low barriers
-27. **Organisational design**: coercion, enculturation, emergence
+
+1. **Interaction terms**: domain (work area), goal (what to achieve), task (how to do it)
+2. **Norman's 7 stages**: goal → intention → specify → execute → perceive → interpret → evaluate
+3. **Gulfs**: Execution (user actions ≠ system allows) and Evaluation (user expects ≠ system shows)
+4. **Slips** (right intention, wrong action) vs **Mistakes** (wrong intention)
+5. **Abowd & Beale**: User, Input, System, Output — each with own language; interaction = translation
+6. **Ergonomics**: physical characteristics, human factors, health, colour use
+7. **Office vs Industrial**: text vs numeric, slow vs fast, clean vs dirty, direct vs indirect manipulation
+8. **Glass interfaces**: cheaper, flexible, but loss of context
+9. **Interaction styles**: CLI, menus, NL, Q&A, forms, spreadsheets, WIMP, 3D
+10. **WIMP**: Windows, Icons, Menus, Pointers — default desktop paradigm
+11. **Windows**: independent areas, scrollbars, title bars, overlapping/tiled
+12. **Icons**: small pictures representing objects/actions
+13. **Menu types**: pull-down, drop-down, fall-down, pop-up, pie, cascading
+14. **Buttons**: radio (exclusive) vs check boxes (non-exclusive)
+15. **Look and feel**: appearance + behaviour
+16. **Modal dialog boxes**: pre-emptive, use sparingly
+17. **Flow** (Csikszentmihalyi): balance anxiety and boredom
+18. **Physical constraints**: ergonomic, physical, legal/safety, context, aesthetic, economic
+19. **Fluidity**: physical state reflects logical state
+20. **Value equation**: use IF perceived value > cost
+21. **Discounted future**: high learning barrier → low adoption → need low barriers
+22. **Organizational design**: coercion, enculturation, emergence
